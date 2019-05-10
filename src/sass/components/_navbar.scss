@@ -7,11 +7,11 @@
   background-color: #1c262b;
   width: 100%;
 
-  &-logo {
+  &__logo {
     margin-left: 4rem;
   }
 
-  &-list {
+  &__list {
     display: flex;
     list-style: none;
 
@@ -27,12 +27,12 @@
     }
   }
 
-  &-search {
+  &__search {
     position: relative;
 
     &-btn {
       position: absolute;
-      left: 24rem;
+      left: 33rem;
       background-color: #eb4e7a;
       border-radius: 1.5rem;
       padding-left: 3rem;
@@ -44,7 +44,7 @@
 
 input[type="text"] {
   border: none;
-  width: 30rem;
+  width: 40rem;
   height: 22px;
   border-radius: 15px;
   padding: 6px;

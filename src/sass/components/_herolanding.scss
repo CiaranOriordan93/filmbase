@@ -5,24 +5,24 @@
   background-color: #000;
   height: 100vh;
 
-  &-text {
+  &__text {
     padding: 10rem;
     height: 10rem;
     max-width: 70rem;
     color: #fff;
   }
 
-  &-category {
+  &__category {
     font-weight: 300;
     font-size: 2rem;
   }
 
-  &-name {
+  &__name {
     font-weight: 900;
     font-size: 2.5rem;
   }
 
-  &-details {
+  &__details {
     font-weight: 100;
     font-size: 1.6rem;
   }

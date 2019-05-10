@@ -1,0 +1,46 @@
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 10rem;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+  }
+
+  &__seperator {
+    border: none;
+    height: 2px;
+    background-image: radial-gradient(
+      circle,
+      rgba(210, 208, 208, 0.190914) 0%,
+      rgba(210, 208, 208, 0) 90%
+    );
+  }
+
+  &__arrow {
+    height: 5rem;
+    width: 5rem;
+  }
+}
+
+.heading__container {
+  display: flex;
+  justify-content: flex-start;
+  width: 75%;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+
+.card {
+  height: 19rem;
+  width: 13rem;
+  background-color: #000;
+}

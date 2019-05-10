@@ -3,15 +3,15 @@
     <a href="#">
       <img
         src="../assets/logo-img.png"
-        class="nav-logo"
+        class="nav__logo"
         alt="logo image"
         height="50px"
         width="50px"
       />
     </a>
-    <div class="nav-search">
+    <div class="nav__search">
       <input type="text" placeholder="Search..." />
-      <button class="nav-search-btn">
+      <button class="nav__search-btn">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -42,9 +42,9 @@
         </svg>
       </button>
     </div>
-    <nav class="nav-links">
-      <ul class="nav-list">
-        <li class="nav-home">
+    <nav class="nav__links">
+      <ul class="nav__list">
+        <li class="nav__home">
           <a href="#" title="Home">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +72,7 @@
             </svg>
           </a>
         </li>
-        <li class="nav-profile">
+        <li class="nav__profile">
           <a href="#" title="Profile">
             <svg
               version="1.1"
@@ -115,7 +115,7 @@
             </svg>
           </a>
         </li>
-        <li class="nav-discover">
+        <li class="nav__discover">
           <a href="#" title="Discover">
             <svg
               height="30px"
