@@ -2,7 +2,8 @@
   <div id="app">
     <NavBar />
     <HeroLanding />
-    <browse />
+    <Browse />
+    <Footer />
   </div>
 </template>
 
@@ -10,12 +11,14 @@
 import NavBar from "@/components/NavBar.vue";
 import HeroLanding from "@/components/HeroLanding.vue";
 import Browse from "@/components/Browse.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
   components: {
     NavBar,
     HeroLanding,
-    Browse
+    Browse,
+    Footer
   }
 };
 </script>

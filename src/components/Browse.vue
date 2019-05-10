@@ -10,7 +10,6 @@
     <CardList />
     <CardList />
     <CardList />
-    <CardList />
   </main>
 </template>
 
