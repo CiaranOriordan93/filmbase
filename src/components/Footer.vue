@@ -1,10 +1,10 @@
 <template>
   <footer class="footer">
-    <div>
-      <h2>Film Base</h2>
-      <ul>
-        <a href="#">
-          <li>
+    <div class="footer-left">
+      <h2 class="footer__heading">Film Base</h2>
+      <ul class="footer__list">
+        <li class="footer__item footer__twitter" title="twitter">
+          <a href="#">
             <svg
               version="1.1"
               id="Capa_1"
@@ -55,10 +55,10 @@
               <g></g>
               <g></g>
             </svg>
-          </li>
-        </a>
-        <a href="#">
-          <li>
+          </a>
+        </li>
+        <li class="footer__item footer__facebook" title="facebook">
+          <a href="#">
             <svg
               version="1.1"
               id="Capa_1"
@@ -101,10 +101,11 @@
               <g></g>
               <g></g>
             </svg>
-          </li>
-        </a>
-        <a href="#">
-          <li>
+          </a>
+        </li>
+
+        <li class="footer__item footer__code" title="code">
+          <a href="#">
             <svg
               version="1.1"
               id="Capa_1"
@@ -157,17 +158,19 @@
               <g></g>
               <g></g>
             </svg>
-          </li>
-        </a>
+          </a>
+        </li>
       </ul>
     </div>
-    <div>
-      <img
-        src="../assets/movie-db-logo.svg"
-        height="50px"
-        width="50px"
-        alt="Movie DB logo"
-      />
+    <span class="footer__signature">Created by Ciaran O'Riordan</span>
+    <div class="footer-right">
+      <a href="#">
+        <img
+          src="../assets/movie-db-logo.svg"
+          class="footer__img"
+          alt="Movie DB logo"
+        />
+      </a>
     </div>
   </footer>
 </template>
