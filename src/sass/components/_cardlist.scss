@@ -40,7 +40,23 @@
 }
 
 .card {
-  height: 19rem;
-  width: 13rem;
-  background-color: #000;
+  &__image {
+    height: 19rem;
+    width: 13rem;
+    background-color: #000;
+  }
+
+  &__genre {
+    opacity: 0.6;
+  }
+
+  &__name {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #fff;
+  }
 }

@@ -9,30 +9,60 @@
           <img src="../assets/back.svg" alt="back arrow" />
         </a>
       </div>
-      <div class="card">
-        <a href="#"></a>
-        <span class="card__genre">Genre</span>
-      </div>
-      <div class="card">
-        <a href="#"></a>
-        <span class="card__genre">Genre</span>
-      </div>
-      <div class="card">
-        <a href="#"></a>
-        <span class="card__genre">Genre</span>
-      </div>
-      <div class="card">
-        <a href="#"></a>
-        <span class="card__genre">Genre</span>
-      </div>
-      <div class="card">
-        <a href="#"></a>
-        <span class="card__genre">Genre</span>
-      </div>
-      <div class="card">
-        <a href="#"></a>
-        <span class="card__genre">Genre</span>
-      </div>
+      <a href="#" class="card__link">
+        <div class="card">
+          <div class="card__image">
+            <span class="card__rating">rating</span>
+          </div>
+          <h4 class="card__name">Name</h4>
+          <span class="card__genre">genre</span>
+        </div>
+      </a>
+      <a href="#" class="card__link">
+        <div class="card">
+          <div class="card__image">
+            <span class="card__rating">rating</span>
+          </div>
+          <h4 class="card__name">Name</h4>
+          <span class="card__genre">genre</span>
+        </div>
+      </a>
+      <a href="#" class="card__link">
+        <div class="card">
+          <div class="card__image">
+            <span class="card__rating">rating</span>
+          </div>
+          <h4 class="card__name">Name</h4>
+          <span class="card__genre">genre</span>
+        </div>
+      </a>
+      <a href="#" class="card__link">
+        <div class="card">
+          <div class="card__image">
+            <span class="card__rating">rating</span>
+          </div>
+          <h4 class="card__name">Name</h4>
+          <span class="card__genre">genre</span>
+        </div>
+      </a>
+      <a href="#" class="card__link">
+        <div class="card">
+          <div class="card__image">
+            <span class="card__rating">rating</span>
+          </div>
+          <h4 class="card__name">Name</h4>
+          <span class="card__genre">genre</span>
+        </div>
+      </a>
+      <a href="#" class="card__link">
+        <div class="card">
+          <div class="card__image">
+            <span class="card__rating">rating</span>
+          </div>
+          <h4 class="card__name">Name</h4>
+          <span class="card__genre">genre</span>
+        </div>
+      </a>
       <div class="carousel__arrow">
         <a href="#">
           <img src="../assets/right-arrow.svg" alt="right arrow" />
