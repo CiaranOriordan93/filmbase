@@ -2,8 +2,11 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
-  background-color: #000;
-  height: 100vh;
+  padding-top: 7.5rem;
+  height: 95vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 
   &__text {
     padding: 10rem;
@@ -25,5 +28,12 @@
   &__details {
     font-weight: 100;
     font-size: 1.6rem;
+  }
+
+  &__icon {
+    position: relative;
+    top: 3px;
+    width: 1.9rem;
+    margin-right: 5px;
   }
 }

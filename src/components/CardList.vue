@@ -6,7 +6,7 @@
     <div class="carousel__container">
       <div class="carousel__arrow">
         <a href="#">
-          <img src="../assets/back.svg" alt="back arrow" />
+          <img src="../assets/back.svg" alt="back arrow">
         </a>
       </div>
       <a href="#" class="card__link">
@@ -65,7 +65,7 @@
       </a>
       <div class="carousel__arrow">
         <a href="#">
-          <img src="../assets/right-arrow.svg" alt="right arrow" />
+          <img src="../assets/right-arrow.svg" alt="right arrow">
         </a>
       </div>
     </div>
@@ -74,5 +74,4 @@
 </template>
 
 <script>
-export default {};
 </script>

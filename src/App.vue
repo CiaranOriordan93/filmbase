@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <NavBar />
-    <HeroLanding />
-    <Browse />
-    <Footer />
+    <NavBar/>
+    <HeroLanding/>
+    <Browse/>
+    <Footer/>
   </div>
 </template>
 
 <script>
-import NavBar from "@/components/NavBar.vue";
-import HeroLanding from "@/components/HeroLanding.vue";
-import Browse from "@/components/Browse.vue";
-import Footer from "@/components/Footer.vue";
+import NavBar from '@/components/NavBar.vue'
+import HeroLanding from '@/components/HeroLanding.vue'
+import Browse from '@/components/Browse.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
   components: {
@@ -20,9 +20,9 @@ export default {
     Browse,
     Footer
   }
-};
+}
 </script>
 
 <style lang="scss">
-@import "../src/sass/main.scss";
+@import '../src/sass/main.scss';
 </style>
