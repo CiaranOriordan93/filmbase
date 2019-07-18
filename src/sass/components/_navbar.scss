@@ -1,6 +1,7 @@
 .nav {
   position: fixed;
   display: flex;
+  z-index: 100;
   align-items: center;
   justify-content: space-between;
   height: 7.5rem;
@@ -42,7 +43,7 @@
   }
 }
 
-input[type="text"] {
+input[type='text'] {
   border: none;
   width: 40rem;
   height: 22px;

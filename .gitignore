@@ -1,6 +1,11 @@
 .DS_Store
 node_modules
-/dist
+.postcssrc.js
+.prettierrc.js
+babel.config.js
+.postcss.config.js
+.eslintrc.js
+.browserlistrc
 
 # local env files
 .env.local
