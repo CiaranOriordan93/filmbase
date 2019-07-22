@@ -1,13 +1,13 @@
 <template>
   <header
     class="hero"
-    :style="{backgroundImage: `url(https://image.tmdb.org/t/p/w1280${playing[0].backdrop_path})` }"
+    :style=" playing[0] ? { backgroundImage: `url(https://image.tmdb.org/t/p/w1280${playing[0].backdrop_path})` } : 0 "
   >
     <div class="hero__text">
       <h3 class="hero__category">Now Playing</h3>
-      <h2 class="hero__name">{{ details.title }}</h2>
+      <h2 class="hero__name">{{ details ? details.title : 0 }}</h2>
       <h4 class="hero__details">
-        {{ details.genres[0].name }} |
+        {{ details ? details.genres[0].name : 0 }} |
         <svg
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -29,12 +29,12 @@
                   class="active-path"
                   data-old_color="#ffffff"
                   fill="#ffffff"
-                ></polygon>
+                />
               </g>
             </g>
           </g>
         </svg>
-        {{ details.vote_average }}
+        {{ details ? details.vote_average : 0 }}
       </h4>
     </div>
   </header>
@@ -45,7 +45,7 @@ import APIService from '@/services/APIService.js'
 export default {
   data() {
     return {
-      playing: null,
+      playing: [],
       details: null
     }
   },

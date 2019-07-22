@@ -6,7 +6,7 @@
     <div class="carousel__container">
       <div class="carousel__arrow">
         <a href="#">
-          <img src="../assets/back.svg" alt="back arrow">
+          <img src="../assets/back.svg" alt="back arrow" />
         </a>
       </div>
       <a href="#" class="card__link">
@@ -34,15 +34,20 @@
                         class="active-path"
                         data-old_color="#ffffff"
                         fill="#ffffff"
-                      ></polygon>
+                      />
                     </g>
                   </g>
                 </g>
-              </svg>rating
+              </svg>
+              <slot name="movie-rating-1">Rating</slot>
             </span>
           </div>
-          <h4 class="card__name">Name</h4>
-          <span class="card__genre">genre</span>
+          <h4 class="card__name">
+            <slot name="movie-name-1">Name</slot>
+          </h4>
+          <span class="card__genre">
+            <slot name="movie-genre-1">Genre</slot>
+          </span>
         </div>
       </a>
       <a href="#" class="card__link">
@@ -70,15 +75,20 @@
                         class="active-path"
                         data-old_color="#ffffff"
                         fill="#ffffff"
-                      ></polygon>
+                      />
                     </g>
                   </g>
                 </g>
-              </svg>rating
+              </svg>
+              <slot name="movie-rating-2">Rating</slot>
             </span>
           </div>
-          <h4 class="card__name">Name</h4>
-          <span class="card__genre">genre</span>
+          <h4 class="card__name">
+            <slot name="movie-name-2">Name</slot>
+          </h4>
+          <span class="card__genre">
+            <slot name="movie-genre-2">Genre</slot>
+          </span>
         </div>
       </a>
       <a href="#" class="card__link">
@@ -106,15 +116,20 @@
                         class="active-path"
                         data-old_color="#ffffff"
                         fill="#ffffff"
-                      ></polygon>
+                      />
                     </g>
                   </g>
                 </g>
-              </svg>rating
+              </svg>
+              <slot name="movie-rating-3">Rating</slot>
             </span>
           </div>
-          <h4 class="card__name">Name</h4>
-          <span class="card__genre">genre</span>
+          <h4 class="card__name">
+            <slot name="movie-name-3">Name</slot>
+          </h4>
+          <span class="card__genre">
+            <slot name="movie-genre-3">Genre</slot>
+          </span>
         </div>
       </a>
       <a href="#" class="card__link">
@@ -142,15 +157,20 @@
                         class="active-path"
                         data-old_color="#ffffff"
                         fill="#ffffff"
-                      ></polygon>
+                      />
                     </g>
                   </g>
                 </g>
-              </svg>rating
+              </svg>
+              <slot name="movie-rating-4">Rating</slot>
             </span>
           </div>
-          <h4 class="card__name">Name</h4>
-          <span class="card__genre">genre</span>
+          <h4 class="card__name">
+            <slot name="movie-name-4">Name</slot>
+          </h4>
+          <span class="card__genre">
+            <slot name="movie-genre-4">Name</slot>
+          </span>
         </div>
       </a>
       <a href="#" class="card__link">
@@ -178,15 +198,20 @@
                         class="active-path"
                         data-old_color="#ffffff"
                         fill="#ffffff"
-                      ></polygon>
+                      />
                     </g>
                   </g>
                 </g>
-              </svg>rating
+              </svg>
+              <slot name="movie-rating-5">Rating</slot>
             </span>
           </div>
-          <h4 class="card__name">Name</h4>
-          <span class="card__genre">genre</span>
+          <h4 class="card__name">
+            <slot name="movie-name-5">Name</slot>
+          </h4>
+          <span class="card__genre">
+            <slot name="movie-genre-5">Name</slot>
+          </span>
         </div>
       </a>
       <a href="#" class="card__link">
@@ -214,20 +239,25 @@
                         class="active-path"
                         data-old_color="#ffffff"
                         fill="#ffffff"
-                      ></polygon>
+                      />
                     </g>
                   </g>
                 </g>
-              </svg>rating
+              </svg>
+              <slot name="movie-rating-6">Rating</slot>
             </span>
           </div>
-          <h4 class="card__name">Name</h4>
-          <span class="card__genre">genre</span>
+          <h4 class="card__name">
+            <slot name="movie-name-6">Name</slot>
+          </h4>
+          <span class="card__genre">
+            <slot name="movie-genre-6">Name</slot>
+          </span>
         </div>
       </a>
       <div class="carousel__arrow">
         <a href="#">
-          <img src="../assets/right-arrow.svg" alt="right arrow">
+          <img src="../assets/right-arrow.svg" alt="right arrow" />
         </a>
       </div>
     </div>
@@ -236,21 +266,4 @@
 </template>
 
 <script>
-import APIService from '@/services/APIService.js'
-export default {
-  data() {
-    return {
-      upComing: []
-    }
-  },
-  created() {
-    APIService.getUpcoming()
-      .then(response => {
-        console.log(response)
-      })
-      .catch(error => {
-        console.log(`There was an error: ${error.response}`)
-      })
-  }
-}
 </script>
