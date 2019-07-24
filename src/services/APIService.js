@@ -31,5 +31,10 @@ export default {
         id +
         '?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US'
     )
+  },
+  getGenres() {
+    return apiClient.get(
+      '/genre/movie/list?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US'
+    )
   }
 }

@@ -1,7 +1,9 @@
 <template>
   <div class="carousel">
     <div class="heading__container">
-      <h3 class="carousel__heading">AIRING TODAY</h3>
+      <h3 class="carousel__heading">
+        <slot name="movie-heading">Airing Today</slot>
+      </h3>
     </div>
     <div class="carousel__container">
       <div class="carousel__arrow">
