@@ -1,16 +1,17 @@
-@import "abstracts/functions";
-@import "abstracts/mixins";
-@import "abstracts/variables";
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
 
-@import "base/animations";
-@import "base/base";
-@import "base/typography";
-@import "base/utilities";
+@import 'base/animations';
+@import 'base/base';
+@import 'base/typography';
+@import 'base/utilities';
 
-@import "components/browse";
-@import "components/cardlist";
-@import "components/footer";
-@import "components/herolanding";
-@import "components/navbar";
+@import 'components/browse';
+@import 'components/card';
+@import 'components/cardlist';
+@import 'components/footer';
+@import 'components/herolanding';
+@import 'components/navbar';
 
-@import "pages/home";
+@import 'pages/home';

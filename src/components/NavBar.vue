@@ -154,5 +154,5 @@ export default {
       default: 24
     }
   }
-};
+}
 </script>

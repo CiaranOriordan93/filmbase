@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <NavBar/>
-    <HeroLanding/>
-    <Browse/>
-    <Footer/>
+    <NavBar />
+    <HeroLanding />
+    <Browse />
+    <Footer />
   </div>
 </template>
 

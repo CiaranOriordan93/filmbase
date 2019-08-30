@@ -6,14 +6,7 @@
         <a href="#" class="browse__category">TV SHOWS</a>
       </div>
     </div>
-    <CardList>
-      <template v-slot:movie-name-1>{{ upComing[0] ? upComing[0].title : "" }}</template>
-      <template v-slot:movie-rating-1>{{ upComing[0] ? upComing[0].vote_average : "" }}</template>
-      <template v-slot:movie-genre-1>{{ genre }}</template>
-    </CardList>
-    <CardList></CardList>
-    <CardList></CardList>
-    <CardList></CardList>
+    <CardList v-for="result in results" :movie="result"></CardList>
   </main>
 </template>
 
@@ -26,39 +19,39 @@ export default {
   },
   data() {
     return {
-      upComing: [],
-      popular: [],
-      topRated: [],
-      playingNow: [],
-      details: [],
-      genres: []
+      results: {
+        upComing: [],
+        popular: [],
+        topRated: [],
+        playing: []
+      }
     }
   },
-
-  computed: {
-    genre: function() {
-      let list = this.upComing[0] ? this.upComing[0].genre_ids[0] : 0
-      let obj = this.genres.find(function(o) {
-        return o.id === list
-      })
-      return obj ? obj.name : ''
-    }
-  },
-
   created() {
-    let self = this
     APIService.getUpcoming()
       .then(response => {
-        self.upComing = response.data.results
-        console.log(this.upComing)
+        this.results.upComing = response.data.results.slice(0, 6)
       })
       .catch(error => {
         console.log(`There was an error: ${error.response}`)
       }),
-      APIService.getGenres()
+      APIService.getPopular()
         .then(response => {
-          self.genres = response.data.genres
-          //console.log(this.genres)
+          this.results.popular = response.data.results.slice(0, 6)
+        })
+        .catch(error => {
+          console.log(`There was an error: ${error.response}`)
+        }),
+      APIService.getTopRated()
+        .then(response => {
+          this.results.topRated = response.data.results.slice(0, 6)
+        })
+        .catch(error => {
+          console.log(`There was an error: ${error.response}`)
+        }),
+      APIService.getPlaying()
+        .then(response => {
+          this.results.playing = response.data.results.slice(0, 6)
         })
         .catch(error => {
           console.log(`There was an error: ${error.response}`)

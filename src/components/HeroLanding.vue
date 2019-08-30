@@ -1,7 +1,15 @@
 <template>
   <header
     class="hero"
-    :style=" playing[0] ? { backgroundImage: `url(https://image.tmdb.org/t/p/w1280${playing[0].backdrop_path})` } : 0 "
+    :style="
+      playing[0]
+        ? {
+            backgroundImage: `url(https://image.tmdb.org/t/p/w1280${
+              playing[0].backdrop_path
+            })`
+          }
+        : 0
+    "
   >
     <div class="hero__text">
       <h3 class="hero__category">Now Playing</h3>
