@@ -1,7 +1,7 @@
 <template>
   <div class="carousel">
     <div class="heading__container">
-      <h3 class="carousel__heading">Airing Today</h3>
+      <h3 class="carousel__heading">{{ formatString.toUpperCase() }}</h3>
     </div>
     <div class="carousel__container">
       <div class="carousel__arrow">
@@ -29,6 +29,10 @@ export default {
     movie: {
       type: Array,
       required: true
+    },
+    heading: {
+      type: String,
+      required: true
     }
   },
   data() {
@@ -48,9 +52,21 @@ export default {
       .catch(error => {
         console.log(`There was an error: ${error.response}`)
       })
+  },
+  computed: {
+    formatString() {
+      for (let i = 0; i < this.heading.length; i++) {
+        if (
+          this.heading[i] === this.heading[i].toUpperCase() &&
+          this.heading[i] !== this.heading[i].toLowerCase()
+        ) {
+          return this.heading.substr(0, i) + ' ' + this.heading.substr(i)
+        }
+      }
+      return this.heading
+    }
   }
 }
 </script>
 
-<style>
-</style>
+<style></style>
