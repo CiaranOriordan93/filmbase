@@ -6,8 +6,10 @@
         <a href="#" class="browse__category">TV SHOWS</a>
       </div>
     </div>
+
     <CardList
       v-for="(result, key) in results"
+      :key="key"
       :movie="result"
       :heading="key"
     ></CardList>
@@ -34,28 +36,28 @@ export default {
   created() {
     APIService.getUpcoming()
       .then(response => {
-        this.results.upComing = response.data.results.slice(0, 6)
+        this.results.upComing = response.data.results.slice(0, 18)
       })
       .catch(error => {
         console.log(`There was an error: ${error.response}`)
       }),
       APIService.getPopular()
         .then(response => {
-          this.results.popular = response.data.results.slice(0, 6)
+          this.results.popular = response.data.results.slice(0, 18)
         })
         .catch(error => {
           console.log(`There was an error: ${error.response}`)
         }),
       APIService.getTopRated()
         .then(response => {
-          this.results.topRated = response.data.results.slice(0, 6)
+          this.results.topRated = response.data.results.slice(0, 18)
         })
         .catch(error => {
           console.log(`There was an error: ${error.response}`)
         }),
       APIService.getPlaying()
         .then(response => {
-          this.results.playingNow = response.data.results.slice(0, 6)
+          this.results.playingNow = response.data.results.slice(0, 18)
         })
         .catch(error => {
           console.log(`There was an error: ${error.response}`)

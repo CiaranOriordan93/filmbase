@@ -61,10 +61,10 @@ export default {
       let obj = this.genres.find(function(o) {
         return o.id === list
       })
-      return obj ? obj.name : ''
+      return obj ? obj.name : 'Unknown'
     },
     stringReducer: function() {
-      const length = 18
+      const length = 16
       let trimmedString =
         this.movie.title.length > length
           ? this.movie.title.substring(0, length - 3) + '...'

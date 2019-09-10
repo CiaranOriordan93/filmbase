@@ -5,15 +5,25 @@
     </div>
     <div class="carousel__container">
       <div class="carousel__arrow">
-        <a href="#">
-          <img src="../assets/back.svg" alt="right arrow" />
-        </a>
+        <img
+          @click="decreaseCounter"
+          src="../assets/back.svg"
+          alt="right arrow"
+        />
       </div>
-      <card v-for="movie in movie" :movie="movie" :genres="genres"></card>
+
+      <card
+        v-for="(movie, i) in buildList"
+        :key="i"
+        :movie="movie"
+        :genres="genres"
+      ></card>
       <div class="carousel__arrow">
-        <a href="#">
-          <img src="../assets/right-arrow.svg" alt="right arrow" />
-        </a>
+        <img
+          @click="increaseCounter"
+          src="../assets/right-arrow.svg"
+          alt="right arrow"
+        />
       </div>
     </div>
     <div class="carousel__seperator"></div>
@@ -25,6 +35,7 @@ import Card from './Card'
 import APIService from '../services/APIService'
 
 export default {
+  components: { Card },
   props: {
     movie: {
       type: Array,
@@ -37,21 +48,30 @@ export default {
   },
   data() {
     return {
-      genres: []
+      genres: [],
+      counter: 0
     }
-  },
-  components: {
-    Card
   },
   created() {
     APIService.getGenres()
       .then(response => {
         this.genres = response.data.genres
-        console.log(this.genres)
       })
       .catch(error => {
         console.log(`There was an error: ${error.response}`)
       })
+  },
+  methods: {
+    increaseCounter() {
+      if (this.counter >= 2) {
+        this.counter = 2
+      } else this.counter++
+    },
+    decreaseCounter() {
+      if (this.counter <= 0) {
+        this.counter = 0
+      } else this.counter--
+    }
   },
   computed: {
     formatString() {
@@ -64,6 +84,15 @@ export default {
         }
       }
       return this.heading
+    },
+    buildList() {
+      if (this.counter === 0) {
+        return this.movie.slice(0, 6)
+      } else if (this.counter === 1) {
+        return this.movie.slice(6, 12)
+      } else if (this.counter === 2) {
+        return this.movie.slice(12, 18)
+      }
     }
   }
 }
