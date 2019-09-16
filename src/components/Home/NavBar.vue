@@ -2,7 +2,7 @@
   <div class="nav">
     <a href="#">
       <img
-        src="../assets/logo-img.png"
+        src="../../assets/logo-img.png"
         class="nav__logo"
         alt="logo image"
         height="50px"

@@ -7,7 +7,7 @@
       <div class="carousel__arrow">
         <img
           @click="decreaseCounter"
-          src="../assets/back.svg"
+          src="../../assets/back.svg"
           alt="right arrow"
         />
       </div>
@@ -21,7 +21,7 @@
       <div class="carousel__arrow">
         <img
           @click="increaseCounter"
-          src="../assets/right-arrow.svg"
+          src="../../assets/right-arrow.svg"
           alt="right arrow"
         />
       </div>
@@ -32,7 +32,7 @@
 
 <script>
 import Card from './Card'
-import APIService from '../services/APIService'
+import APIService from '@/services/APIService'
 
 export default {
   components: { Card },

@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import CardList from '@/components/CardList.vue'
+import CardList from '@/components/Home/CardList.vue'
 import APIService from '@/services/APIService.js'
 export default {
   components: {

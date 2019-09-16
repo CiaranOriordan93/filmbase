@@ -166,7 +166,7 @@
     <div class="footer-right">
       <a href="#">
         <img
-          src="../assets/movie-db-logo.svg"
+          src="../../assets/movie-db-logo.svg"
           class="footer__img"
           alt="Movie DB logo"
         />
