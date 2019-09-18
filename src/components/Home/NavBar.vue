@@ -10,7 +10,7 @@
       />
     </a>
     <div class="nav__search">
-      <input type="text" placeholder="Search..." />
+      <input type="text" class="nav__input" placeholder="Search..." />
       <button class="nav__search-btn">
         <svg
           xmlns="http://www.w3.org/2000/svg"

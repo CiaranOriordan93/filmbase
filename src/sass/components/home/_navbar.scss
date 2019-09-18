@@ -30,6 +30,7 @@
 
   &__search {
     position: relative;
+    margin-left: 9rem;
 
     &-btn {
       position: absolute;
@@ -41,12 +42,12 @@
       padding-top: 0.5rem;
     }
   }
-}
 
-input[type='text'] {
-  border: none;
-  width: 40rem;
-  height: 22px;
-  border-radius: 15px;
-  padding: 6px;
+  &__input[type='text'] {
+    border: none;
+    width: 40rem;
+    height: 22px;
+    border-radius: 15px;
+    padding: 6px;
+  }
 }

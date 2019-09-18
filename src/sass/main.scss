@@ -7,12 +7,16 @@
 @import 'base/typography';
 @import 'base/utilities';
 
-@import 'components/browse';
-@import 'components/card';
-@import 'components/cardlist';
-@import 'components/footer';
-@import 'components/herolanding';
-@import 'components/navbar';
+@import 'components/discover/search';
+@import 'components/discover/searchResults';
+@import 'components/discover/result';
+
+@import 'components/home/browse';
+@import 'components/home/card';
+@import 'components/home/cardlist';
+@import 'components/home/footer';
+@import 'components/home/herolanding';
+@import 'components/home/navbar';
 
 @import 'pages/home';
 @import 'pages/discover';

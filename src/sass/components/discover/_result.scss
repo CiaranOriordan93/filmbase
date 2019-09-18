@@ -1,0 +1,19 @@
+.result__card {
+  height: 20rem;
+  width: 20rem;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.result__image {
+  background-color: white;
+  height: 15rem;
+  width: 10rem;
+  border-radius: 3%;
+  overflow: hidden;
+}
+
+.result__heading {
+  font-size: 1.6rem;
+}

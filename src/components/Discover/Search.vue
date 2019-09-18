@@ -1,14 +1,13 @@
 <template>
-    <div class="discover__container">
-        <div class="discover__heading">
-            <h2>Discover</h2>
+    <div class="search">
+        <div class="search__heading">
+            <h2 class="search__heading-text">Discover</h2>
         </div>
-        <hr>
         
-        <form class="discover__form">
-            <input type="text" placeholder="Search Movies" name="movie" class="discover__input">
+        <form class="search__form">
+            <input type="text" placeholder="Search" name="movie" class="search__input">
 
-            <select class="discover__select">
+            <select class="search__options">
             <option>Popularity Descending</option>
             <option>Popularity Ascending</option>
             <option>Release Date Descending</option>
@@ -17,7 +16,7 @@
             <option>Vote Average Ascending</option>
             </select>
 
-            <select class="discover__select">
+            <select class="search__genre">
             <option disabled selected>Genre</option>
             <option>Horror</option>
             <option>Comedy</option>
@@ -26,8 +25,8 @@
             <option>Drama</option>
             </select>
         </form>
-        <div class="discover__submit">
-            <input type="submit" value="Search">
+        <div class="search__submit">
+            <input type="submit" value="Search" class="search__submit-search">
         </div>
     </div>
 </template>
@@ -39,7 +38,5 @@
 </script>
 
 <style>
-.discover__container {
-    padding-top: 100px;
-}
+
 </style>

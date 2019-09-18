@@ -1,0 +1,12 @@
+.results {
+  margin-top: 10rem;
+  height: 50rem;
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 100%;
+  }
+}
