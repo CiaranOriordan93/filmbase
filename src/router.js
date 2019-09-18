@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import Discover from './views/Discover.Vue'
-import LogIn from './views/LogIn.Vue'
-import Profile from './views/Profile.Vue'
+import Discover from './views/Discover.vue'
+import LogIn from './views/LogIn.vue'
+import Profile from './views/Profile.vue'
 
 Vue.use(Router)
 

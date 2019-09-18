@@ -5,11 +5,9 @@
 </template>
 
 <script>
-  export default {
-
-  }
+export default {}
 </script>
 
 <style lang="scss">
-  @import '../src/sass/main.scss';
+@import '../src/sass/main.scss';
 </style>
