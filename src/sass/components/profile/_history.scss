@@ -1,0 +1,13 @@
+.history {
+  background: #161130;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+
+  &__heading {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-bottom: 1px solid #eb4e7a;
+  }
+}

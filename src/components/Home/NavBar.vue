@@ -156,13 +156,13 @@ export default {
   },
   methods: {
     navigateToDiscover() {
-      this.$router.push("/discover")
+      this.$router.push('/discover')
     },
     navigateToProfile() {
-      this.$router.push("/profile")
+      this.$router.push('/profile')
     },
     navigateToHome() {
-      this.$router.push("/")
+      this.$router.push('/')
     }
   }
 }

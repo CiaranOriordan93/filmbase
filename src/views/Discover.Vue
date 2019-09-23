@@ -1,11 +1,11 @@
 <template>
-<div class="discover">
-  <div class="discover__nav">
-    <NavBar></NavBar>
-  </div>
+  <div class="discover">
+    <div class="discover__nav">
+      <NavBar></NavBar>
+    </div>
     <Search></Search>
     <SearchResults></SearchResults>
-</div>
+  </div>
 </template>
 
 <script>

@@ -1,0 +1,11 @@
+.profile {
+  &__container {
+    display: flex;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}

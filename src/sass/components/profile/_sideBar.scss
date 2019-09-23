@@ -1,0 +1,48 @@
+.sidebar {
+  background: linear-gradient(
+    135deg,
+    rgba(94, 4, 29, 0.8) 40%,
+    rgba(9, 11, 12, 0.8)
+  );
+  height: 100vh;
+  width: 38rem;
+
+  &__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__image {
+    height: 10rem;
+    width: 10rem;
+    background: white;
+    overflow: hidden;
+    border-radius: 100%;
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    text-align: center;
+  }
+
+  &__heading {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  &__para {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  &__button {
+    font-size: 2rem;
+    border: 2px solid #eb4e7a;
+    border-radius: 10rem;
+    padding: 1rem;
+  }
+}

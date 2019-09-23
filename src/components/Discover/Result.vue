@@ -1,7 +1,7 @@
     <template>
         <div class="result__card">
             <div class="result__image">
-                <img></img>
+                <img>
             </div>
             <div class="result__heading">
                 <p>Heading</p>
