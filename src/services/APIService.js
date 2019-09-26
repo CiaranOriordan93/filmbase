@@ -36,5 +36,15 @@ export default {
     return apiClient.get(
       '/genre/movie/list?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US'
     )
+  },
+  getMostPopular(number) {
+    return apiClient.get(
+      `/discover/movie?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US&sort_by=popularity.desc&page=${number}`
+    )
+  },
+  getDiscoverMovies() {
+    return apiClient.get(
+      `/discover/movie?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US&sort_by=popularity.desc&&page=1`
+    )
   }
 }

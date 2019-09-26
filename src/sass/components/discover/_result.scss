@@ -12,6 +12,11 @@
   width: 10rem;
   border-radius: 3%;
   overflow: hidden;
+
+  &__img {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .result__heading {
