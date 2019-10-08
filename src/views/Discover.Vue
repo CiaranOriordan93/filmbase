@@ -30,7 +30,6 @@ export default {
   //   searchRequest() {
   //     APIService.getDiscoverMovies(
   //       this.search.keyword,
-  //       this.search.option,
   //       this.search.genre
   //     ).then(response => {
   //       this.result = []
