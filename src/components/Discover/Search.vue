@@ -5,21 +5,20 @@
     </div>
 
     <form class="search__form">
-      <label for="search">
-        <input
-          type="text"
-          placeholder="Search"
-          name="movie"
-          id="search"
-          class="search__input"
-          v-model.lazy="search.keyword"
-        />
-      </label>
+      <span class="search__text">Enter a year e.g : 1998</span>
+      <input
+        v-model.number.lazy.trim="search.release"
+        type="text"
+        class="search__input"
+      />
       <label for="sorting">
-        <select class="search__options" id="sorting">
-          <option v-for="(option, key) in sortOptions" :key="key">{{
-            option
-          }}</option>
+        <select class="search__options" id="sorting" v-model="search.sort">
+          <option
+            v-for="(option, name, index) in sortOptions"
+            :key="index"
+            :value="option"
+            >{{ name }}</option
+          >
         </select>
       </label>
 
@@ -50,19 +49,21 @@ export default {
   data() {
     return {
       search: {
-        keyword: '',
-        genre: 'Horror'
+        release: 0,
+        sort: '',
+        genre: ''
       },
-      sortOptions: [
-        'Sorting Options',
-        'Popularity Descending',
-        'Popularity Ascending',
-        'Release Date Descending',
-        'Release Date Ascending',
-        'Vote Average Descending',
-        'Vote Average Ascending'
-      ],
+      sortOptions: {
+        Filter: '',
+        popularityDescending: 'popularity.desc',
+        popularityAscending: 'popularity.asc',
+        releaseDateDescending: 'release_date.desc',
+        releaseDateAscending: 'release_date.asc',
+        voteAverageDescending: 'vote_average.desc',
+        voteAverageAscending: 'vote_average.asc'
+      },
       genres: {
+        Genre: '',
         Horror: '27',
         Action: '28',
         Comedy: '35',
@@ -74,6 +75,7 @@ export default {
   methods: {
     submitted() {
       this.$emit('searchObject', this.search)
+      this.$emit('searchCall')
     }
   }
 }

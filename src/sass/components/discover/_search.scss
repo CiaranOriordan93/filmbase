@@ -18,12 +18,13 @@
 
   &__form {
     display: flex;
-    width: 25%;
+    width: 35%;
     justify-content: space-around;
+    align-items: center;
   }
 
   &__input[type='text'] {
-    width: 10rem;
+    width: 13rem;
     padding: 1rem;
     border: none;
     border-radius: 3%;
@@ -33,7 +34,7 @@
   &__options {
     border: none;
     border-radius: 3%;
-    height: 100%;
+    padding: 1rem;
     width: 18rem;
     background-color: #eb4e7a;
   }
@@ -42,7 +43,7 @@
     border: none;
     border-radius: 3%;
     height: 100%;
-    width: 9rem;
+    padding: 1rem;
     background-color: #eb4e7a;
   }
 

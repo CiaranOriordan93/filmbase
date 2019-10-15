@@ -37,14 +37,14 @@ export default {
       '/genre/movie/list?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US'
     )
   },
-  getMostPopular(number) {
+  getMostPopular() {
     return apiClient.get(
-      `/discover/movie?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US&sort_by=popularity.desc&page=${number}`
+      `/discover/movie?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US&sort_by=popularity.desc`
     )
   },
-  getDiscoverMovies() {
+  getDiscoverMovies(release, genre, sort) {
     return apiClient.get(
-      `/discover/movie?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US&sort_by=popularity.desc&&page=1`
+      `/discover/movie?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US&sort_by=${sort}&with_genres=${genre}&year=${release}&language=en-US`
     )
   }
 }

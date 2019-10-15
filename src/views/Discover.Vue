@@ -3,7 +3,10 @@
     <div class="discover__nav">
       <NavBar></NavBar>
     </div>
-    <Search @searchObject="search = $event"></Search>
+    <Search
+      @searchObject="search = $event"
+      @searchCall="searchRequest"
+    ></Search>
     <SearchResults :results="result"></SearchResults>
   </div>
 </template>
@@ -23,33 +26,46 @@ export default {
   data() {
     return {
       result: [],
-      search: {}
+      search: {
+        release: 0,
+        genre: '',
+        sort: ''
+      }
     }
   },
-  // methods: {
-  //   searchRequest() {
-  //     APIService.getDiscoverMovies(
-  //       this.search.keyword,
-  //       this.search.genre
-  //     ).then(response => {
-  //       this.result = []
-  //       this.result = response.data.results
-  //     })
-  //   }
-  // },
-  created() {
-    for (let i = 1; i < 10; i++) {
-      APIService.getMostPopular(i)
+  methods: {
+    searchRequest() {
+      APIService.getDiscoverMovies(
+        this.search.release,
+        this.search.genre,
+        this.search.sort
+      )
         .then(response => {
-          for (let n = 0; n < response.data.results.length; n++) {
-            this.result.push(response.data.results[n])
+          this.result = []
+          console.log(response.data.results)
+          for (let i = 0; i < response.data.results.length; i++) {
+            this.result.push(response.data.results[i])
           }
-          console.log(this.result)
         })
         .catch(error => {
           console.log(`There was an error: ${error.response}`)
         })
     }
+  },
+  created() {
+    APIService.getDiscoverMovies(
+      this.search.release,
+      this.search.genre,
+      this.search.sort
+    )
+      .then(response => {
+        for (let n = 0; n < response.data.results.length; n++) {
+          this.result.push(response.data.results[n])
+        }
+      })
+      .catch(error => {
+        console.log(`There was an error: ${error.response}`)
+      })
   }
 }
 </script>
