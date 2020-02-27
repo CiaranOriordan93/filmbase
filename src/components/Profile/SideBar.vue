@@ -5,7 +5,7 @@
         <img />
       </div>
       <div class="sidebar__text">
-        <h3 class="sidebar__heading">Welcome text</h3>
+        <h3 class="sidebar__heading">Welcome</h3>
         <p class="sidebar__para">Name text</p>
       </div>
       <div class="sidebar__button">

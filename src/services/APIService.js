@@ -46,5 +46,23 @@ export default {
     return apiClient.get(
       `/discover/movie?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US&sort_by=${sort}&with_genres=${genre}&year=${release}&language=en-US`
     )
+  },
+  getRequestToken() {
+    return apiClient.get(
+      '/authentication/token/new?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3'
+    )
+  },
+  getSessionId(body) {
+    return apiClient.post(
+      '/authentication/session/new?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3',
+      {
+        request_token: body
+      }
+    )
+  },
+  getUserDetails(id) {
+    return apiClient.get(
+      `/account?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&session_id=${id}`
+    )
   }
 }

@@ -3,10 +3,7 @@
     <div class="discover__nav">
       <NavBar></NavBar>
     </div>
-    <Search
-      @searchObject="search = $event"
-      @searchCall="searchRequest"
-    ></Search>
+    <Search @searchObject="search = $event" @searchCall="searchRequest"></Search>
     <SearchResults :results="result"></SearchResults>
   </div>
 </template>
@@ -33,6 +30,21 @@ export default {
       }
     }
   },
+  created() {
+    APIService.getDiscoverMovies(
+      this.search.release,
+      this.search.genre,
+      this.search.sort
+    )
+      .then(response => {
+        for (let n = 0; n < response.data.results.length; n++) {
+          this.result.push(response.data.results[n])
+        }
+      })
+      .catch(error => {
+        console.log(`There was an error: ${error.response}`)
+      })
+  },
   methods: {
     searchRequest() {
       APIService.getDiscoverMovies(
@@ -51,21 +63,6 @@ export default {
           console.log(`There was an error: ${error.response}`)
         })
     }
-  },
-  created() {
-    APIService.getDiscoverMovies(
-      this.search.release,
-      this.search.genre,
-      this.search.sort
-    )
-      .then(response => {
-        for (let n = 0; n < response.data.results.length; n++) {
-          this.result.push(response.data.results[n])
-        }
-      })
-      .catch(error => {
-        console.log(`There was an error: ${error.response}`)
-      })
   }
 }
 </script>

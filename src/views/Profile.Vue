@@ -16,12 +16,21 @@ import NavBar from '../components/Home/NavBar.vue'
 import SideBar from '../components/Profile/SideBar.vue'
 import Header from '../components/Profile/Header.vue'
 import History from '../components/Profile/History.vue'
+import APIService from '../services/APIService'
 export default {
   components: {
     NavBar,
     SideBar,
     Header,
     History
+  },
+  created() {
+    if (!this.$store.state.sessionId) {
+      this.$router.push('/login')
+    }
+    APIService.getUserDetails(this.$store.state.sessionId).then(response => {
+      console.log(response)
+    })
   }
 }
 </script>
