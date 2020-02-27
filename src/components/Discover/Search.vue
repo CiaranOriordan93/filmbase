@@ -4,42 +4,27 @@
       <h2 class="search__heading-text">Discover</h2>
     </div>
 
-    <form class="search__form">
+    <form @submit.prevent class="search__form">
       <span class="search__text">Enter a year e.g : 1998</span>
-      <input
-        v-model.number.lazy.trim="search.release"
-        type="text"
-        class="search__input"
-      />
+      <input v-model.number.trim="search.release" type="text" class="search__input" />
       <label for="sorting">
         <select class="search__options" id="sorting" v-model="search.sort">
           <option
             v-for="(option, name, index) in sortOptions"
             :key="index"
             :value="option"
-            >{{ name }}</option
-          >
+          >{{ name }}</option>
         </select>
       </label>
 
       <label for="genre">
         <select class="search__genre" id="genre" v-model="search.genre">
-          <option
-            v-for="(genre, name, index) in genres"
-            :key="index"
-            :value="genre"
-            >{{ name }}</option
-          >
+          <option v-for="(genre, name, index) in genres" :key="index" :value="genre">{{ name }}</option>
         </select>
       </label>
     </form>
     <div class="search__submit">
-      <input
-        type="submit"
-        value="Search"
-        class="search__submit-search"
-        @click.prevent="submitted"
-      />
+      <input type="submit" value="Search" class="search__submit-search" @click="submitted" />
     </div>
   </div>
 </template>
@@ -71,6 +56,13 @@ export default {
         Drama: '18'
       }
     }
+  },
+  mounted() {
+    window.addEventListener('keypress', e => {
+      if (e.key === 'Enter') {
+        this.submitted()
+      }
+    })
   },
   methods: {
     submitted() {

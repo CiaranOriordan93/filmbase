@@ -1,19 +1,11 @@
 <template>
   <div class="results">
     <div class="results__container">
-      <Result
-        v-for="(movie, key) in buildList"
-        :key="key"
-        :movie="movie"
-      ></Result>
+      <Result v-for="(movie, key) in buildList" :key="key" :movie="movie"></Result>
     </div>
     <div class="results__navigation">
-      <button class="results__navigation__btn" @click="decreaseCounter">
-        Previous
-      </button>
-      <button class="results__navigation__btn" @click="increaseCounter">
-        Next
-      </button>
+      <button class="results__navigation__btn" @click="decreaseCounter">Previous</button>
+      <button class="results__navigation__btn" @click="increaseCounter">Next</button>
     </div>
   </div>
 </template>

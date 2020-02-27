@@ -8,7 +8,8 @@ export default new Vuex.Store({
     requestId: null,
     sessionId: null,
     userId: null,
-    userName: null
+    userName: null,
+    userAvatarHash: null
   },
   mutations: {
     userRequestId(state, userData) {
@@ -16,7 +17,11 @@ export default new Vuex.Store({
     },
     userSessionRequest(state, userData) {
       state.sessionId = userData.token
-      console.log(state.sessionId)
+    },
+    userDetails(state, userData) {
+      state.userId = userData.token.id
+      state.userName = userData.token.username
+      state.userAvatarHash = userData.token.avatar.gravatar.hash
     }
   },
   actions: {
@@ -32,12 +37,18 @@ export default new Vuex.Store({
     getSessionId({ commit, state }) {
       APIService.getSessionId(state.requestId)
         .then(response => {
-          console.log(response)
           commit('userSessionRequest', {
             token: response.data.session_id
           })
         })
         .catch(error => console.log(error))
+    },
+    getUserDetails({ commit, state }) {
+      APIService.getUserDetails(state.sessionId).then(response => {
+        commit('userDetails', {
+          token: response.data
+        })
+      })
     }
   },
   getters: {}

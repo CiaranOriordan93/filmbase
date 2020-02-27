@@ -1,11 +1,11 @@
 <template>
   <div class="profile">
-    <NavBar></NavBar>
+    <NavBar />
     <main class="profile__container">
-      <SideBar></SideBar>
+      <SideBar />
       <div class="profile__content">
-        <Header></Header>
-        <History></History>
+        <Header />
+        <History />
       </div>
     </main>
   </div>
@@ -16,7 +16,6 @@ import NavBar from '../components/Home/NavBar.vue'
 import SideBar from '../components/Profile/SideBar.vue'
 import Header from '../components/Profile/Header.vue'
 import History from '../components/Profile/History.vue'
-import APIService from '../services/APIService'
 export default {
   components: {
     NavBar,
@@ -25,12 +24,10 @@ export default {
     History
   },
   created() {
-    if (!this.$store.state.sessionId) {
-      this.$router.push('/login')
-    }
-    APIService.getUserDetails(this.$store.state.sessionId).then(response => {
-      console.log(response)
-    })
+    // if (!this.$store.state.sessionId) {
+    //   this.$router.push('/login')
+    // }
+    this.$store.dispatch('getUserDetails')
   }
 }
 </script>
