@@ -64,5 +64,25 @@ export default {
     return apiClient.get(
       `/account?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&session_id=${id}`
     )
+  },
+  getUserFavMovies(accountId, sessionId) {
+    return apiClient.get(
+      `/account/${accountId}/favorite/movies?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&session_id=${sessionId}&language=en-US`
+    )
+  },
+  getUserRatedMovies(accountId, sessionId) {
+    return apiClient.get(
+      `/account/${accountId}/rated/movies?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US&session_id=${sessionId}`
+    )
+  },
+  getUserFavTvShows(accountId, sessionId) {
+    return apiClient.get(
+      `/account/${accountId}/favorite/tv?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US&session_id=${sessionId}`
+    )
+  },
+  getUserRatedTvShows(accountId, sessionId) {
+    return apiClient.get(
+      `/account/${accountId}/rated/tv?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US&session_id=${sessionId}`
+    )
   }
 }
