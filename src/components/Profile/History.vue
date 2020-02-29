@@ -1,24 +1,50 @@
 <template>
   <div class="history">
-    <div class="history__heading">
-      <h2 class="history__heading__h2">Favorite Movies</h2>
+    <div
+      class="history__container"
+      v-if="!this.filter.toggleTvShow && !this.filter.toggleRatedMovie && !this.filter.toggleRatedTvShow"
+    >
+      <div class="history__heading">
+        <h2 class="history__heading__h2">Favorite Movies</h2>
+      </div>
+      <div class="history__results">
+        <Result v-for="(movie, key) in favMovies" :key="key" :movie="movie" />
+      </div>
     </div>
-    <div class="history__fav-movies">
-      <Result v-for="(movie, key) in favMovies" :key="key" :movie="movie" />
-    </div>
-    <div class="history__fav-tv">
+
+    <div
+      class="history__container"
+      v-if="!this.filter.toggleMovie && !this.filter.toggleRatedMovie && !this.filter.toggleRatedTvShow"
+    >
       <div class="history__heading">
         <h2 class="history__heading__h2">Favorite TV Shows</h2>
       </div>
+      <div class="history__results">
+        <Result v-for="(movie, key) in favTvShows" :key="key" :movie="movie" />
+      </div>
     </div>
-    <div class="history__rated-movies">
+
+    <div
+      class="history__container"
+      v-if="!this.filter.toggleTvShow && !this.filter.toggleMovie && !this.filter.toggleRatedTvShow"
+    >
       <div class="history__heading">
         <h2 class="history__heading__h2">Rated Movies</h2>
       </div>
+      <div class="history__results">
+        <Result v-for="(movie, key) in ratedMovies" :key="key" :movie="movie" />
+      </div>
     </div>
-    <div class="history__rated-tv">
+
+    <div
+      class="history__container"
+      v-if="!this.filter.toggleTvShow && !this.filter.toggleRatedMovie && !this.filter.toggleMovie"
+    >
       <div class="history__heading">
         <h2 class="history__heading__h2">Rated TV Shows</h2>
+      </div>
+      <div class="history__results">
+        <Result v-for="(movie, key) in ratedTvShows" :key="key" :movie="movie" />
       </div>
     </div>
   </div>
@@ -30,6 +56,14 @@ import APIService from '../../services/APIService'
 export default {
   components: {
     Result
+  },
+  props: {
+    filter: {
+      toggleMovie: false,
+      toggleTvShow: false,
+      toggleRatedMovie: false,
+      toggleRatedTvShow: false
+    }
   },
   data() {
     return {

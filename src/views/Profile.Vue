@@ -4,8 +4,8 @@
     <main class="profile__container">
       <SideBar />
       <div class="profile__content">
-        <Header />
-        <History />
+        <Header @toggle="filter = $event" />
+        <History :filter="filter" />
       </div>
     </main>
   </div>
@@ -22,6 +22,16 @@ export default {
     SideBar,
     Header,
     History
+  },
+  data() {
+    return {
+      filter: {
+        toggleMovie: false,
+        toggleTvShow: false,
+        toggleRatedMovie: false,
+        toggleRatedTvShow: false
+      }
+    }
   },
   created() {
     // if (!this.$store.state.sessionId) {
