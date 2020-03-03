@@ -12,14 +12,20 @@
         <p class="sidebar__para">{{ this.$store.state.userName }}</p>
       </div>
       <div class="sidebar__button">
-        <button class="sidebar__button__btn">Log Out Btn</button>
+        <button class="sidebar__button__btn" @click="logOut">Log Out Btn</button>
       </div>
     </div>
   </aside>
 </template>
 
 <script>
-export default {}
+export default {
+  methods: {
+    logOut() {
+      this.$store.dispatch('logOutUser')
+    }
+  }
+}
 </script>
 
 <style></style>

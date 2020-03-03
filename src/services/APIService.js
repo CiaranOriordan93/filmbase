@@ -84,5 +84,15 @@ export default {
     return apiClient.get(
       `/account/${accountId}/rated/tv?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US&session_id=${sessionId}`
     )
+  },
+  logOut(body) {
+    return apiClient.delete(
+      '/authentication/session?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3',
+      {
+        data: {
+          session_id: body
+        }
+      }
+    )
   }
 }

@@ -22,6 +22,13 @@ export default new Vuex.Store({
       state.userId = userData.token.id
       state.userName = userData.token.username
       state.userAvatarHash = userData.token.avatar.gravatar.hash
+    },
+    userLogOut(state) {
+      state.requestId = null
+      state.sessionId = null
+      state.userId = null
+      state.userName = null
+      state.userAvatarHash = null
     }
   },
   actions: {
@@ -48,6 +55,12 @@ export default new Vuex.Store({
         commit('userDetails', {
           token: response.data
         })
+      })
+    },
+    logOutUser({ commit, state }) {
+      console.log(state.sessionId)
+      APIService.logOut(state.sessionId).then(response => {
+        console.log(response)
       })
     }
   },
