@@ -5,6 +5,7 @@ const apiClient = axios.create({
 })
 
 export default {
+  // API calls to get movies from TMDB
   getPlaying() {
     return apiClient.get(
       '/movie/now_playing?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US&page=1'
@@ -47,6 +48,30 @@ export default {
       `/discover/movie?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US&sort_by=${sort}&with_genres=${genre}&year=${release}&language=en-US`
     )
   },
+
+  //API calls to get TV shows from TMDB
+  getPopularTv() {
+    return apiClient.get(
+      `/tv/popular?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US&page=1`
+    )
+  },
+  getTopRatedTv() {
+    return apiClient.get(
+      `/tv/top_rated?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US&page=1`
+    )
+  },
+  getLatestTv() {
+    return apiClient.get(
+      `/tv/airing_today?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US&page=1`
+    )
+  },
+  getPlayingNowTv() {
+    return apiClient.get(
+      `/tv/on_the_air?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US&page=1`
+    )
+  },
+
+  //API calls to setup and handle user authentication
   getRequestToken() {
     return apiClient.get(
       '/authentication/token/new?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3'
@@ -60,6 +85,18 @@ export default {
       }
     )
   },
+  logOut(body) {
+    return apiClient.delete(
+      '/authentication/session?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3',
+      {
+        data: {
+          session_id: body
+        }
+      }
+    )
+  },
+
+  //API calls to get/post user data
   getUserDetails(id) {
     return apiClient.get(
       `/account?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&session_id=${id}`
@@ -83,16 +120,6 @@ export default {
   getUserRatedTvShows(accountId, sessionId) {
     return apiClient.get(
       `/account/${accountId}/rated/tv?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US&session_id=${sessionId}`
-    )
-  },
-  logOut(body) {
-    return apiClient.delete(
-      '/authentication/session?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3',
-      {
-        data: {
-          session_id: body
-        }
-      }
     )
   }
 }

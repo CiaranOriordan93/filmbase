@@ -65,11 +65,19 @@ export default {
     },
     stringReducer: function() {
       const length = 16
-      let trimmedString =
-        this.movie.title.length > length
-          ? this.movie.title.substring(0, length - 3) + '...'
-          : this.movie.title
-      return trimmedString
+      if (this.movie.title) {
+        let trimmedString =
+          this.movie.title.length > length
+            ? this.movie.title.substring(0, length - 3) + '...'
+            : this.movie.title
+        return trimmedString
+      } else {
+        let trimmedString =
+          this.movie.name.length > length
+            ? this.movie.name.substring(0, length - 3) + '...'
+            : this.movie.name
+        return trimmedString
+      }
     }
   }
 }

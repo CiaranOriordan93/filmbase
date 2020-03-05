@@ -54,7 +54,6 @@ export default {
       )
         .then(response => {
           this.result = []
-          console.log(response.data.results)
           for (let i = 0; i < response.data.results.length; i++) {
             this.result.push(response.data.results[i])
           }

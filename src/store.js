@@ -58,13 +58,16 @@ export default new Vuex.Store({
       })
     },
     logOutUser({ commit, state }) {
-      console.log(state.sessionId)
-      APIService.logOut(state.sessionId).then(response => {
-        if (response.status === 200) {
-          commit('userLogOut')
-        } else
-          console.log('could not log out because of error: ' + response.status)
-      })
+      APIService.logOut(state.sessionId)
+        .then(response => {
+          if (response.status === 200) {
+            commit('userLogOut')
+          } else
+            console.log(
+              'could not log out because of error: ' + response.status
+            )
+        })
+        .catch(error => console.log(error))
     }
   },
   getters: {}

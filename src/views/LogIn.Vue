@@ -16,10 +16,14 @@
       >Please allow read and write permissions on TMDB</p>
       <p v-if="continueBtnDisplay" class="login__main__warning">Then click continue</p>
       <div class="login__container">
-        <button v-if="!continueBtnDisplay" @click="getToken" class="login__btn">Login</button>
-        <button v-if="!continueBtnDisplay" class="login__btn">Browse as Guest</button>
-        <button v-if="continueBtnDisplay" @click="getSessionId" class="login__btn">Continue</button>
-        <p class="login__para">Guest users have access to limited features</p>
+        <button v-if="!continueBtnDisplay" @click="getToken" class="login__container__btn">Login</button>
+        <button
+          v-if="continueBtnDisplay"
+          @click="getSessionId"
+          class="login__container__btn"
+        >Continue</button>
+        <h3 class="login__container__text">Test name: filmbaseDummy</h3>
+        <h3 class="login__container__text">Test password: FilmbasePassword</h3>
       </div>
     </div>
   </div>

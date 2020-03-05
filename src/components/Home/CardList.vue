@@ -3,29 +3,17 @@
     <div class="heading__container">
       <h3 class="carousel__heading">{{ formatString.toUpperCase() }}</h3>
     </div>
+
     <div class="carousel__container">
       <div class="carousel__arrow">
-        <img
-          @click="decreaseCounter"
-          src="../../assets/back.svg"
-          alt="right arrow"
-        />
+        <img @click="decreaseCounter" src="../../assets/back.svg" alt="right arrow" />
       </div>
-
-      <card
-        v-for="(movie, i) in buildList"
-        :key="i"
-        :movie="movie"
-        :genres="genres"
-      ></card>
+      <card v-for="(movie, i) in buildList" :key="i" :movie="movie" :genres="genres"></card>
       <div class="carousel__arrow">
-        <img
-          @click="increaseCounter"
-          src="../../assets/right-arrow.svg"
-          alt="right arrow"
-        />
+        <img @click="increaseCounter" src="../../assets/right-arrow.svg" alt="right arrow" />
       </div>
     </div>
+
     <div class="carousel__seperator"></div>
   </div>
 </template>
@@ -93,6 +81,7 @@ export default {
       } else if (this.counter === 2) {
         return this.movie.slice(12, 18)
       }
+      return this.movie
     }
   }
 }

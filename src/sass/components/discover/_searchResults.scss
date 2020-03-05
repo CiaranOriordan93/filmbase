@@ -10,23 +10,4 @@
     width: 65%;
     margin: 0 auto;
   }
-
-  &__navigation {
-    margin-top: 5rem;
-    display: flex;
-    justify-content: center;
-
-    &__btn {
-      font-size: 2rem;
-      height: 5rem;
-      width: 11rem;
-      background-color: #eb4e7a;
-      border-radius: 10rem;
-      margin-bottom: 10rem;
-
-      &:first-of-type {
-        margin-right: 3rem;
-      }
-    }
-  }
 }

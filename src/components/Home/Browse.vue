@@ -2,17 +2,16 @@
   <main class="main">
     <div class="browse">
       <div class="browse__heading">
-        <a href="#" class="browse__category">MOVIES</a>
-        <a href="#" class="browse__category">TV SHOWS</a>
+        <a class="browse__category" @click="toggleMovies">MOVIES</a>
+        <a class="browse__category" @click="toggleTv">TV SHOWS</a>
       </div>
     </div>
-
-    <CardList
-      v-for="(result, key) in results"
-      :key="key"
-      :movie="result"
-      :heading="key"
-    ></CardList>
+    <div v-if="counter" class="cardList">
+      <CardList v-for="(result, key) in movieResults" :key="key" :movie="result" :heading="key"></CardList>
+    </div>
+    <div v-else class="cardList">
+      <CardList v-for="(result, key) in tvResults" :key="key" :movie="result" :heading="key"></CardList>
+    </div>
   </main>
 </template>
 
@@ -25,43 +24,89 @@ export default {
   },
   data() {
     return {
-      results: {
+      movieResults: {
         upComing: [],
         popular: [],
         topRated: [],
         playingNow: []
-      }
+      },
+      tvResults: {
+        upComing: [],
+        popular: [],
+        topRated: [],
+        playingNow: []
+      },
+      counter: true
     }
   },
   created() {
+    //API calls for movies
     APIService.getUpcoming()
       .then(response => {
-        this.results.upComing = response.data.results.slice(0, 18)
+        this.movieResults.upComing = response.data.results.slice(0, 18)
       })
       .catch(error => {
         console.log(`There was an error: ${error.response}`)
       }),
       APIService.getPopular()
         .then(response => {
-          this.results.popular = response.data.results.slice(0, 18)
+          this.movieResults.popular = response.data.results.slice(0, 18)
         })
         .catch(error => {
           console.log(`There was an error: ${error.response}`)
         }),
       APIService.getTopRated()
         .then(response => {
-          this.results.topRated = response.data.results.slice(0, 18)
+          this.movieResults.topRated = response.data.results.slice(0, 18)
         })
         .catch(error => {
           console.log(`There was an error: ${error.response}`)
         }),
       APIService.getPlaying()
         .then(response => {
-          this.results.playingNow = response.data.results.slice(0, 18)
+          this.movieResults.playingNow = response.data.results.slice(0, 18)
         })
         .catch(error => {
           console.log(`There was an error: ${error.response}`)
         })
+
+    //API calls for Tv Shows
+    APIService.getPopularTv()
+      .then(response => {
+        this.tvResults.popular = response.data.results.slice(0, 18)
+      })
+      .catch(error => {
+        console.log(`There was an error: ${error.response} in populartv`)
+      })
+    APIService.getTopRatedTv()
+      .then(response => {
+        this.tvResults.topRated = response.data.results.slice(0, 18)
+      })
+      .catch(error => {
+        console.log(`There was an error: ${error.response} in topratedtv`)
+      })
+    APIService.getLatestTv()
+      .then(response => {
+        this.tvResults.upComing = response.data.results.slice(0, 18)
+      })
+      .catch(error => {
+        console.log(`There was an error: ${error.response} in latesttv`)
+      })
+    APIService.getPlayingNowTv()
+      .then(response => {
+        this.tvResults.playingNow = response.data.results.slice(0, 18)
+      })
+      .catch(error => {
+        console.log(`There was an error: ${error.response} in playingNow`)
+      })
+  },
+  methods: {
+    toggleMovies() {
+      this.counter = true
+    },
+    toggleTv() {
+      this.counter = false
+    }
   }
 }
 </script>
