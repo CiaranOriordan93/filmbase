@@ -1,4 +1,7 @@
 .card {
+  transition: all 0.4s;
+  cursor: pointer;
+
   &__image-container {
     position: relative;
     overflow: hidden;
@@ -39,5 +42,9 @@
     top: 2px;
     margin-right: 5px;
     margin-left: 3px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
   }
 }

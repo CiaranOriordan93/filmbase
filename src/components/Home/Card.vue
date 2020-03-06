@@ -1,6 +1,6 @@
 <template>
-  <a href="#" class="card__link">
-    <div class="card">
+  <div class="card__link">
+    <div class="card" @click="showId">
       <div class="card__image-container">
         <img
           :src="`https://image.tmdb.org/t/p/w300${movie.poster_path}`"
@@ -40,7 +40,7 @@
       <h4 class="card__name">{{ stringReducer }}</h4>
       <span class="card__genre">{{ genreFinder }}</span>
     </div>
-  </a>
+  </div>
 </template>
 
 <script>
@@ -78,6 +78,11 @@ export default {
             : this.movie.name
         return trimmedString
       }
+    }
+  },
+  methods: {
+    showId() {
+      console.log(this.movie.id)
     }
   }
 }

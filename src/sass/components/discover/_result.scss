@@ -12,6 +12,12 @@
   width: 10rem;
   border-radius: 3%;
   overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   &__img {
     height: 100%;
