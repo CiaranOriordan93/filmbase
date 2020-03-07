@@ -34,9 +34,9 @@ export default {
     }
   },
   created() {
-    // if (!this.$store.state.sessionId) {
-    //   this.$router.push('/login')
-    // }
+    if (!this.$store.state.sessionId) {
+      this.$router.push('/login')
+    }
     this.$store.dispatch('getUserDetails')
   }
 }

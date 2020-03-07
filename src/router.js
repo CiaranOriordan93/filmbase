@@ -1,11 +1,12 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-import Home from './views/Home.vue';
-import Discover from './views/Discover.vue';
-import LogIn from './views/LogIn.vue';
-import Profile from './views/Profile.vue';
+import Vue from 'vue'
+import Router from 'vue-router'
+import Home from './views/Home.vue'
+import Discover from './views/Discover.vue'
+import LogIn from './views/LogIn.vue'
+import Profile from './views/Profile.vue'
+import Info from './views/Info.vue'
 
-Vue.use(Router);
+Vue.use(Router)
 
 export default new Router({
   routes: [
@@ -28,6 +29,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: LogIn
+    },
+    {
+      path: '/info',
+      name: 'info',
+      component: Info
     }
   ],
   mode: 'history'

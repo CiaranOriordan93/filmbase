@@ -1,6 +1,6 @@
 <template>
   <div class="nav">
-    <a href="#">
+    <router-link to="/">
       <img
         src="../../assets/logo-img.png"
         class="nav__logo"
@@ -8,7 +8,7 @@
         height="50px"
         width="50px"
       />
-    </a>
+    </router-link>
     <div class="nav__search">
       <input type="text" class="nav__input" placeholder="Search..." />
       <button class="nav__search-btn">
@@ -45,7 +45,7 @@
     <nav class="nav__links">
       <ul class="nav__list">
         <li class="nav__home">
-          <button @click="navigateToHome" title="Home">
+          <router-link to="/" title="Home">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -70,7 +70,7 @@
                 </g>
               </g>
             </svg>
-          </button>
+          </router-link>
         </li>
         <li class="nav__profile">
           <button @click="navigateToProfile" title="Profile">
@@ -116,7 +116,7 @@
           </button>
         </li>
         <li class="nav__discover">
-          <button @click="navigateToDiscover" title="Discover">
+          <router-link to="/discover" title="Discover">
             <svg
               height="30px"
               viewBox="-21 -21 682.66257 682"
@@ -133,7 +133,7 @@
                 d="m226.886719 100.210938c0-6.875-5.78125-12.65625-12.652344-12.65625-6.875 0-12.65625 5.78125-12.65625 12.65625 0 6.679687 5.445313 12.328124 12.101563 12.628906 7.078124.3125 13.207031-5.535156 13.207031-12.628906zm0 0"
               />
             </svg>
-          </button>
+          </router-link>
         </li>
       </ul>
     </nav>
@@ -155,16 +155,10 @@ export default {
     }
   },
   methods: {
-    navigateToDiscover() {
-      this.$router.push('/discover')
-    },
     navigateToProfile() {
       if (this.$store.state.sessionId) {
         this.$router.push('/profile')
       } else this.$router.push('/login')
-    },
-    navigateToHome() {
-      this.$router.push('/')
     }
   }
 }

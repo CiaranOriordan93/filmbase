@@ -18,6 +18,11 @@
     align-items: center;
     font-size: 1.6rem;
     cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      border: 2px solid #fff;
+    }
   }
 
   &__img {

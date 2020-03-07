@@ -11,6 +11,8 @@
 @import 'components/discover/searchResults';
 @import 'components/discover/result';
 
+@import 'components/info/banner';
+
 @import 'components/profile/header';
 @import 'components/profile/history';
 @import 'components/profile/sideBar';
@@ -23,6 +25,7 @@
 @import 'components/home/navbar';
 
 @import 'pages/home';
+@import 'pages/info';
 @import 'pages/discover';
 @import 'pages/login';
 @import 'pages/profile';
