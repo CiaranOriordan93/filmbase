@@ -2,15 +2,34 @@
   font-size: 2rem;
 }
 
+p {
+  font-size: 1.6rem;
+}
+
 h2 {
   font-size: 3.5rem;
 }
 
 h4 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  font-weight: 800;
 }
 
 span {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 100;
+}
+
+.banner {
+  color: black;
+}
+
+.banner__heading__h2 {
+  font-size: 3.2rem;
+  font-weight: 900;
+
+  &__year {
+    font-size: 2rem;
+    font-weight: 100;
+  }
 }

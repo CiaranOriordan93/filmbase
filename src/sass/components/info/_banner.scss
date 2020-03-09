@@ -1,7 +1,113 @@
 .banner {
-  background: black;
-  width: 100%;
+  background: whitesmoke;
   height: 100vh;
   display: flex;
   justify-content: center;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10rem;
+    height: 87vh;
+    width: 97%;
+    background: rgb(255, 230, 0);
+  }
+
+  &__picture {
+    margin-top: 12.5rem;
+    width: 32rem;
+    height: 43rem;
+    overflow: hidden;
+
+    &__image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__description {
+    margin-top: 14.5rem;
+    height: 39rem;
+    width: 38%;
+    margin-left: 10rem;
+
+    &__options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 35%;
+
+      &__favourite {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid black;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 10rem;
+        background: rgba(0, 0, 0, 0.315);
+        cursor: pointer;
+      }
+
+      &__rating {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid black;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 10rem;
+        background: rgba(0, 0, 0, 0.315);
+        cursor: pointer;
+      }
+
+      &__score {
+        position: relative;
+
+        &-value {
+          position: absolute;
+          top: 1rem;
+          left: 4.5rem;
+          font-size: 1rem;
+          line-height: 1rem;
+          font-weight: 600;
+        }
+      }
+    }
+
+    &__overview {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    &__h4 {
+      margin-bottom: 2rem;
+    }
+
+    &__crew {
+      display: flex;
+      justify-content: space-between;
+
+      &__member {
+        display: flex;
+        flex-direction: column;
+
+        &__name {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+.circle {
+  background: rgba(0, 0, 0, 0.315);
+  color: #fff;
+  border: 2px solid black;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
