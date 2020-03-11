@@ -26,11 +26,14 @@ export default {
       '/movie/top_rated?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US&page=1'
     )
   },
-  getDetails(id) {
+  getMovieDetails(id) {
     return apiClient.get(
-      '/movie/' +
-        id +
-        '?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US'
+      `/movie/${id}?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US`
+    )
+  },
+  getMovieCredits(id) {
+    return apiClient.get(
+      `/movie/${id}/credits?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3`
     )
   },
   getGenres() {
@@ -68,6 +71,16 @@ export default {
   getPlayingNowTv() {
     return apiClient.get(
       `/tv/on_the_air?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US&page=1`
+    )
+  },
+  getTvShowDetails(id) {
+    return apiClient.get(
+      `/tv/${id}?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US`
+    )
+  },
+  getTvShowCredits(id) {
+    return apiClient.get(
+      `/tv/${id}/credits?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3`
     )
   },
 

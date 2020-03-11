@@ -9,7 +9,9 @@ export default new Vuex.Store({
     sessionId: null,
     userId: null,
     userName: null,
-    userAvatarHash: null
+    userAvatarHash: null,
+    movieId: null,
+    showId: null
   },
   mutations: {
     userRequestId(state, userData) {
@@ -29,6 +31,16 @@ export default new Vuex.Store({
       state.userId = null
       state.userName = null
       state.userAvatarHash = null
+    },
+    movieId(state, movieData) {
+      state.movieId = movieData
+    },
+    showId(state, showData) {
+      state.showId = showData
+    },
+    resetMovieShowState(state) {
+      state.showId = null
+      state.movieId = null
     }
   },
   actions: {
@@ -68,6 +80,15 @@ export default new Vuex.Store({
             )
         })
         .catch(error => console.log(error))
+    },
+    getShowId({ commit }, show) {
+      commit('showId', show)
+    },
+    getMovieId({ commit }, movie) {
+      commit('movieId', movie)
+    },
+    resetTvMovieState({ commit }) {
+      commit('resetMovieShowState')
     }
   },
   getters: {}

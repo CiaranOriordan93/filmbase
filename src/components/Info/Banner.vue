@@ -7,8 +7,10 @@
       <div class="banner__description">
         <div class="banner__description__heading">
           <h2 class="banner__heading__h2">
-            Movie / show name
-            <span class="banner__heading__h2__year">(release year)</span>
+            {{ show.title || show.name }}
+            <span
+              class="banner__heading__h2__year"
+            >({{ show.release_date }})</span>
           </h2>
         </div>
         <div class="banner__description__options">
@@ -69,21 +71,21 @@
         </div>
         <div class="banner__description__overview">
           <h4 class="banner__description__overview__h4">Overview</h4>
-          <p class="banner__description__overview__para">Some text explaing movie / show</p>
+          <p class="banner__description__overview__para">{{ show.overview }}</p>
         </div>
-        <h4 class="banner__description__crew__h4">Featured Crew</h4>
-        <div class="banner__description__crew">
+        <h4 class="banner__description__crew__h4" v-if="crew.length > 0">Featured Crew</h4>
+        <div class="banner__description__crew" v-if="crew.length > 0">
           <div class="banner__description__crew__member">
-            <p class="banner__description__crew__member__name">Ciaran Oriordan</p>
+            <p class="banner__description__crew__member__name">{{ crew.director.name }}</p>
             <p class="banner__description__crew__member__role">Director</p>
           </div>
           <div class="banner__description__crew__member">
-            <p class="banner__description__crew__member__name">Ciaran Oriordan</p>
-            <p class="banner__description__crew__member__role">Director</p>
+            <p class="banner__description__crew__member__name">{{ crew.producer.name }}</p>
+            <p class="banner__description__crew__member__role">Producer</p>
           </div>
           <div class="banner__description__crew__member">
-            <p class="banner__description__crew__member__name">Ciaran Oriordan</p>
-            <p class="banner__description__crew__member__role">Director</p>
+            <p class="banner__description__crew__member__name">{{ crew.writer.name }}</p>
+            <p class="banner__description__crew__member__role">Writer</p>
           </div>
         </div>
       </div>
@@ -92,7 +94,17 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    show: {
+      type: Object,
+      required: true
+    },
+    crew: {
+      type: Object
+    }
+  }
+}
 </script>
 
 <style>

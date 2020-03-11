@@ -10,7 +10,7 @@
     margin-top: 10rem;
     height: 87vh;
     width: 97%;
-    background: rgb(255, 230, 0);
+    background: rgba(38, 0, 255, 0.562);
   }
 
   &__picture {
@@ -31,11 +31,17 @@
     width: 38%;
     margin-left: 10rem;
 
+    &__crew {
+      &__h4 {
+        margin-bottom: 2rem;
+      }
+    }
+
     &__options {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 35%;
+      width: 45%;
 
       &__favourite {
         display: flex;

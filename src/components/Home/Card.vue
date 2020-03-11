@@ -1,12 +1,13 @@
 <template>
   <div class="card__link">
-    <div class="card" @click="showId">
-      <div class="card__image-container">
+    <div class="card">
+      <div class="card__image-container" @click="storeShowId">
         <img
           :src="`https://image.tmdb.org/t/p/w300${movie.poster_path}`"
           alt="movie poster"
           class="card__image"
         />
+
         <span class="card__rating">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -81,8 +82,12 @@ export default {
     }
   },
   methods: {
-    showId() {
-      console.log(this.movie.id)
+    storeShowId() {
+      if (this.movie.title) {
+        this.$store.dispatch('getMovieId', this.movie.id)
+      } else this.$store.dispatch('getShowId', this.movie.id)
+
+      this.$router.push('/info')
     }
   }
 }

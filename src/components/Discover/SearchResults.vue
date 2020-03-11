@@ -39,6 +39,7 @@ export default {
       } else if (this.counter === 2) {
         return this.results.slice(40, 60)
       }
+      return this.results
     }
   }
 }

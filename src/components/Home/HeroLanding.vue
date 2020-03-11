@@ -61,7 +61,7 @@ export default {
     APIService.getPlaying()
       .then(response => {
         this.playing = response.data.results.slice(0, 3)
-        APIService.getDetails(this.playing[0].id).then(response => {
+        APIService.getMovieDetails(this.playing[0].id).then(response => {
           this.details = response.data
         })
       })
