@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
-import Discover from './views/Discover.vue'
-import LogIn from './views/LogIn.vue'
-import Profile from './views/Profile.vue'
-import Info from './views/Info.vue'
+import Home from '@/views/Home.vue'
+import Discover from '@/views/Discover.vue'
+import LogIn from '@/views/LogIn.vue'
+import Profile from '@/views/Profile.vue'
+import Info from '@/views/Info.vue'
 
 Vue.use(Router)
 
