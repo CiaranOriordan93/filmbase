@@ -2,15 +2,37 @@
   <main class="main">
     <div class="browse">
       <div class="browse__heading">
-        <a class="browse__category" @click="toggleMovies">MOVIES</a>
-        <a class="browse__category" @click="toggleTv">TV SHOWS</a>
+        <a
+          class="browse__category"
+          @click="toggleMovies"
+        >MOVIES</a>
+        <a
+          class="browse__category"
+          @click="toggleTv"
+        >TV SHOWS</a>
       </div>
     </div>
-    <div v-if="counter" class="cardList">
-      <CardList v-for="(result, key) in movieResults" :key="key" :movie="result" :heading="key"></CardList>
+    <div
+      v-if="counter"
+      class="cardList"
+    >
+      <CardList
+        v-for="(result, key) in movieResults"
+        :key="key"
+        :movie="result"
+        :heading="key"
+      />
     </div>
-    <div v-else class="cardList">
-      <CardList v-for="(result, key) in tvResults" :key="key" :movie="result" :heading="key"></CardList>
+    <div
+      v-else
+      class="cardList"
+    >
+      <CardList
+        v-for="(result, key) in tvResults"
+        :key="key"
+        :movie="result"
+        :heading="key"
+      />
     </div>
   </main>
 </template>

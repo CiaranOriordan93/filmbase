@@ -1,7 +1,10 @@
 <template>
   <div class="info">
     <NavBar />
-    <Banner :show="show" :crew="crew" />
+    <Banner
+      :show="show"
+      :crew="crew"
+    />
   </div>
 </template>
 

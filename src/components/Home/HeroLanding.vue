@@ -4,23 +4,27 @@
     :style="
       playing[0]
         ? {
-            backgroundImage: `url(https://image.tmdb.org/t/p/w1280${
-              playing[0].backdrop_path
-            })`
-          }
+          backgroundImage: `url(https://image.tmdb.org/t/p/w1280${
+            playing[0].backdrop_path
+          })`
+        }
         : 0
     "
   >
     <div class="hero__text">
-      <h3 class="hero__category">Now Playing</h3>
-      <h2 class="hero__name">{{ details ? details.title : 0 }}</h2>
+      <h3 class="hero__category">
+        Now Playing
+      </h3>
+      <h2 class="hero__name">
+        {{ details ? details.title : 0 }}
+      </h2>
       <h4 class="hero__details">
         {{ details ? details.genres[0].name : 0 }} |
         <svg
+          id="Capa_1"
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           version="1.1"
-          id="Capa_1"
           x="0px"
           y="0px"
           viewBox="0 0 510 510"

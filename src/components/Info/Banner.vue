@@ -2,7 +2,10 @@
   <div class="banner">
     <div class="banner__container">
       <div class="banner__picture">
-        <img class="banner__picture__image" src="../../assets/logo-img.png" />
+        <img
+          class="banner__picture__image"
+          src="../../assets/logo-img.png"
+        >
       </div>
       <div class="banner__description">
         <div class="banner__description__heading">
@@ -20,7 +23,10 @@
             </div>
             <span class="banner__description__options__score-value">User Score</span>
           </div>
-          <div class="banner__description__options__favourite" title="Click to add as favourite!">
+          <div
+            class="banner__description__options__favourite"
+            title="Click to add as favourite!"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 -28 512.00002 512"
@@ -38,13 +44,16 @@
               </g>
             </svg>
           </div>
-          <div class="banner__description__options__rating" title="Click to rate!">
+          <div
+            class="banner__description__options__rating"
+            title="Click to rate!"
+          >
             <svg
+              id="Capa_1"
               title="click to rate!"
               xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink"
               version="1.1"
-              id="Capa_1"
               x="0px"
               y="0px"
               viewBox="0 0 510 510"
@@ -70,22 +79,46 @@
           </div>
         </div>
         <div class="banner__description__overview">
-          <h4 class="banner__description__overview__h4">Overview</h4>
-          <p class="banner__description__overview__para">{{ show.overview }}</p>
+          <h4 class="banner__description__overview__h4">
+            Overview
+          </h4>
+          <p class="banner__description__overview__para">
+            {{ show.overview }}
+          </p>
         </div>
-        <h4 class="banner__description__crew__h4" v-if="crew.length > 0">Featured Crew</h4>
-        <div class="banner__description__crew" v-if="crew.length > 0">
+        <h4
+          v-if="crew.length > 0"
+          class="banner__description__crew__h4"
+        >
+          Featured Crew
+        </h4>
+        <div
+          v-if="crew.length > 0"
+          class="banner__description__crew"
+        >
           <div class="banner__description__crew__member">
-            <p class="banner__description__crew__member__name">{{ crew.director.name }}</p>
-            <p class="banner__description__crew__member__role">Director</p>
+            <p class="banner__description__crew__member__name">
+              {{ crew.director.name }}
+            </p>
+            <p class="banner__description__crew__member__role">
+              Director
+            </p>
           </div>
           <div class="banner__description__crew__member">
-            <p class="banner__description__crew__member__name">{{ crew.producer.name }}</p>
-            <p class="banner__description__crew__member__role">Producer</p>
+            <p class="banner__description__crew__member__name">
+              {{ crew.producer.name }}
+            </p>
+            <p class="banner__description__crew__member__role">
+              Producer
+            </p>
           </div>
           <div class="banner__description__crew__member">
-            <p class="banner__description__crew__member__name">{{ crew.writer.name }}</p>
-            <p class="banner__description__crew__member__role">Writer</p>
+            <p class="banner__description__crew__member__name">
+              {{ crew.writer.name }}
+            </p>
+            <p class="banner__description__crew__member__role">
+              Writer
+            </p>
           </div>
         </div>
       </div>

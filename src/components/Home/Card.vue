@@ -1,19 +1,22 @@
 <template>
   <div class="card__link">
     <div class="card">
-      <div class="card__image-container" @click="storeShowId">
+      <div
+        class="card__image-container"
+        @click="storeShowId"
+      >
         <img
           :src="`https://image.tmdb.org/t/p/w300${movie.poster_path}`"
           alt="movie poster"
           class="card__image"
-        />
+        >
 
         <span class="card__rating">
           <svg
+            id="Capa_1"
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
             version="1.1"
-            id="Capa_1"
             x="0px"
             y="0px"
             viewBox="0 0 510 510"
@@ -38,7 +41,9 @@
           {{ movie.vote_average }}
         </span>
       </div>
-      <h4 class="card__name">{{ stringReducer }}</h4>
+      <h4 class="card__name">
+        {{ stringReducer }}
+      </h4>
       <span class="card__genre">{{ genreFinder }}</span>
     </div>
   </div>

@@ -1,7 +1,11 @@
 <template>
   <div class="results">
     <div class="results__container">
-      <Result v-for="(movie, key) in buildList" :key="key" :movie="movie"></Result>
+      <Result
+        v-for="(movie, key) in buildList"
+        :key="key"
+        :movie="movie"
+      />
     </div>
   </div>
 </template>
@@ -9,25 +13,13 @@
 <script>
 import Result from '../../components/Discover/Result'
 export default {
-  props: ['results'],
   components: {
     Result
   },
+  props: ['results'],
   data() {
     return {
       counter: 0
-    }
-  },
-  methods: {
-    increaseCounter() {
-      if (this.counter >= 2) {
-        this.counter = 2
-      } else this.counter++
-    },
-    decreaseCounter() {
-      if (this.counter <= 0) {
-        this.counter = 0
-      } else this.counter--
     }
   },
   computed: {
@@ -40,6 +32,18 @@ export default {
         return this.results.slice(40, 60)
       }
       return this.results
+    }
+  },
+  methods: {
+    increaseCounter() {
+      if (this.counter >= 2) {
+        this.counter = 2
+      } else this.counter++
+    },
+    decreaseCounter() {
+      if (this.counter <= 0) {
+        this.counter = 0
+      } else this.counter--
     }
   }
 }

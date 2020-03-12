@@ -2,28 +2,55 @@
   <div class="login">
     <div class="login__header">
       <div class="login__logo">
-        <img src="../assets/logo-img.png" alt="logo" height="110px" />
+        <img
+          src="../assets/logo-img.png"
+          alt="logo"
+          height="110px"
+        >
       </div>
       <div class="login__heading">
-        <h2 class="login__heading__head">Login</h2>
-        <p class="login__heading__para">FilmBase</p>
+        <h2 class="login__heading__head">
+          Login
+        </h2>
+        <p class="login__heading__para">
+          FilmBase
+        </p>
       </div>
     </div>
     <div class="login__main">
       <p
         v-if="continueBtnDisplay"
         class="login__main__warning"
-      >Please allow read and write permissions on TMDB</p>
-      <p v-if="continueBtnDisplay" class="login__main__warning">Then click continue</p>
+      >
+        Please allow read and write permissions on TMDB
+      </p>
+      <p
+        v-if="continueBtnDisplay"
+        class="login__main__warning"
+      >
+        Then click continue
+      </p>
       <div class="login__container">
-        <button v-if="!continueBtnDisplay" @click="getToken" class="login__container__btn">Login</button>
+        <button
+          v-if="!continueBtnDisplay"
+          class="login__container__btn"
+          @click="getToken"
+        >
+          Login
+        </button>
         <button
           v-if="continueBtnDisplay"
-          @click="getSessionId"
           class="login__container__btn"
-        >Continue</button>
-        <h3 class="login__container__text">Test name: filmbaseDummy</h3>
-        <h3 class="login__container__text">Test password: FilmbasePassword</h3>
+          @click="getSessionId"
+        >
+          Continue
+        </button>
+        <h3 class="login__container__text">
+          Test name: filmbaseDummy
+        </h3>
+        <h3 class="login__container__text">
+          Test password: FilmbasePassword
+        </h3>
       </div>
     </div>
   </div>

@@ -1,8 +1,8 @@
 <template>
   <div class="history">
     <div
+      v-if="!filter.toggleTvShow && !filter.toggleRatedMovie && !filter.toggleRatedTvShow"
       class="history__container"
-      v-if="!this.filter.toggleTvShow && !this.filter.toggleRatedMovie && !this.filter.toggleRatedTvShow"
     >
       <div class="history__heading">
         <h2 class="history__heading__h2">Favorite Movies</h2>
@@ -13,8 +13,8 @@
     </div>
 
     <div
+      v-if="!filter.toggleMovie && !filter.toggleRatedMovie && !filter.toggleRatedTvShow"
       class="history__container"
-      v-if="!this.filter.toggleMovie && !this.filter.toggleRatedMovie && !this.filter.toggleRatedTvShow"
     >
       <div class="history__heading">
         <h2 class="history__heading__h2">Favorite TV Shows</h2>
@@ -25,8 +25,8 @@
     </div>
 
     <div
+      v-if="!filter.toggleTvShow && !filter.toggleMovie && !filter.toggleRatedTvShow"
       class="history__container"
-      v-if="!this.filter.toggleTvShow && !this.filter.toggleMovie && !this.filter.toggleRatedTvShow"
     >
       <div class="history__heading">
         <h2 class="history__heading__h2">Rated Movies</h2>
@@ -37,8 +37,8 @@
     </div>
 
     <div
+      v-if="!filter.toggleTvShow && !filter.toggleRatedMovie && !filter.toggleMovie"
       class="history__container"
-      v-if="!this.filter.toggleTvShow && !this.filter.toggleRatedMovie && !this.filter.toggleMovie"
     >
       <div class="history__heading">
         <h2 class="history__heading__h2">Rated TV Shows</h2>

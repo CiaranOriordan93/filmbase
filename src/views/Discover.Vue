@@ -1,10 +1,13 @@
 <template>
   <div class="discover">
     <div class="discover__nav">
-      <NavBar></NavBar>
+      <NavBar />
     </div>
-    <Search @searchObject="search = $event" @searchCall="searchRequest"></Search>
-    <SearchResults :results="result"></SearchResults>
+    <Search
+      @searchObject="search = $event"
+      @searchCall="searchRequest"
+    />
+    <SearchResults :results="result" />
   </div>
 </template>
 

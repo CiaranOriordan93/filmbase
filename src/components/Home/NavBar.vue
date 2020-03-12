@@ -7,16 +7,20 @@
         alt="logo image"
         height="50px"
         width="50px"
-      />
+      >
     </router-link>
     <div class="nav__search">
-      <input type="text" class="nav__input" placeholder="Search..." />
+      <input
+        type="text"
+        class="nav__input"
+        placeholder="Search..."
+      >
       <button class="nav__search-btn">
         <svg
+          id="Capa_1"
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           version="1.1"
-          id="Capa_1"
           x="0px"
           y="0px"
           width="30px"
@@ -45,12 +49,15 @@
     <nav class="nav__links">
       <ul class="nav__list">
         <li class="nav__home">
-          <router-link to="/" title="Home">
+          <router-link
+            to="/"
+            title="Home"
+          >
             <svg
+              id="Capa_1"
               xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink"
               version="1.1"
-              id="Capa_1"
               x="0px"
               y="0px"
               viewBox="0 0 306.773 306.773"
@@ -73,10 +80,13 @@
           </router-link>
         </li>
         <li class="nav__profile">
-          <button @click="navigateToProfile" title="Profile">
+          <button
+            title="Profile"
+            @click="navigateToProfile"
+          >
             <svg
-              version="1.1"
               id="Layer_1"
+              version="1.1"
               xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink"
               x="0px"
@@ -116,7 +126,10 @@
           </button>
         </li>
         <li class="nav__discover">
-          <router-link to="/discover" title="Discover">
+          <router-link
+            to="/discover"
+            title="Discover"
+          >
             <svg
               height="30px"
               viewBox="-21 -21 682.66257 682"
@@ -142,7 +155,7 @@
 
 <script>
 export default {
-  name: 'icon',
+  name: 'Icon',
   props: {
     name: String,
     width: {

@@ -1,13 +1,18 @@
 <template>
   <footer class="footer">
     <div class="footer-left">
-      <h2 class="footer__heading">FilmBase</h2>
+      <h2 class="footer__heading">
+        FilmBase
+      </h2>
       <ul class="footer__list">
-        <li class="footer__item footer__twitter" title="twitter">
+        <li
+          class="footer__item footer__twitter"
+          title="twitter"
+        >
           <a href="#">
             <svg
-              version="1.1"
               id="Capa_1"
+              version="1.1"
               xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink"
               x="0px"
@@ -19,7 +24,12 @@
               height="25px"
             >
               <g>
-                <circle style="fill:#55ACEE;" cx="56.099" cy="56.098" r="56.098" />
+                <circle
+                  style="fill:#55ACEE;"
+                  cx="56.099"
+                  cy="56.098"
+                  r="56.098"
+                />
                 <g>
                   <path
                     style="fill:#F1F2F2;"
@@ -52,11 +62,14 @@
             </svg>
           </a>
         </li>
-        <li class="footer__item footer__facebook" title="facebook">
+        <li
+          class="footer__item footer__facebook"
+          title="facebook"
+        >
           <a href="#">
             <svg
-              version="1.1"
               id="Capa_1"
+              version="1.1"
               xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink"
               x="0px"
@@ -68,7 +81,12 @@
               height="25px"
             >
               <g>
-                <circle style="fill:#3B5998;" cx="56.098" cy="56.098" r="56.098" />
+                <circle
+                  style="fill:#3B5998;"
+                  cx="56.098"
+                  cy="56.098"
+                  r="56.098"
+                />
                 <path
                   style="fill:#FFFFFF;"
                   d="M70.201,58.294h-10.01v36.672H45.025V58.294h-7.213V45.406h7.213v-8.34
@@ -94,11 +112,14 @@
           </a>
         </li>
 
-        <li class="footer__item footer__code" title="code">
+        <li
+          class="footer__item footer__code"
+          title="code"
+        >
           <a href="#">
             <svg
-              version="1.1"
               id="Capa_1"
+              version="1.1"
               xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink"
               x="0px"
@@ -155,7 +176,11 @@
     <span class="footer__signature">Created by Ciaran O'Riordan</span>
     <div class="footer-right">
       <a href="#">
-        <img src="../../assets/movie-db-logo.svg" class="footer__img" alt="Movie DB logo" />
+        <img
+          src="../../assets/movie-db-logo.svg"
+          class="footer__img"
+          alt="Movie DB logo"
+        >
       </a>
     </div>
   </footer>
