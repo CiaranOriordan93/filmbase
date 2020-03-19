@@ -31,8 +31,13 @@ export default new Router({
       component: LogIn
     },
     {
-      path: '/info',
-      name: 'info',
+      path: '/info/tv-id=:id',
+      name: 'infoTv',
+      component: Info
+    },
+    {
+      path: '/info/movie-id=:id',
+      name: 'infoMovie',
       component: Info
     }
   ],
