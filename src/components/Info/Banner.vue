@@ -1,8 +1,15 @@
 <template>
   <div class="banner">
-    <div class="banner__container">
+    <div
+      class="banner__container"
+      :style="{backgroundImage: `linear-gradient(to bottom, rgba(2, 154, 255, 0.85), rgba(2, 154, 255, 0.85)), url(https://image.tmdb.org/t/p/w1280${show.backdrop_path})`}"
+    >
       <div class="banner__picture">
-        <img class="banner__picture__image" src="../../assets/logo-img.png" />
+        <img
+          class="banner__picture__image"
+          :src="`https://image.tmdb.org/t/p/w500${show.poster_path}`"
+          alt="Movie/Tv shows poster"
+        />
       </div>
       <div class="banner__description">
         <div class="banner__description__heading">
@@ -10,13 +17,13 @@
             {{ show.title || show.name }}
             <span
               class="banner__heading__h2__year"
-            >({{ show.release_date }})</span>
+            >({{ show.release_date || show.first_air_date }})</span>
           </h2>
         </div>
         <div class="banner__description__options">
           <div class="banner__description__options__score">
             <div class="circle">
-              <span class="circle__percent">75%</span>
+              <span class="circle__percent">{{ show.vote_average * 10 }}%</span>
             </div>
             <span class="banner__description__options__score-value">User Score</span>
           </div>
@@ -26,6 +33,7 @@
               viewBox="0 -28 512.00002 512"
               width="20px"
               height="30px"
+              :fill="colorFill()"
             >
               <g>
                 <path
@@ -33,7 +41,6 @@
                   data-original="#000000"
                   class="active-path"
                   data-old_color="#000000"
-                  fill="#eb4e7a"
                 />
               </g>
             </svg>
@@ -75,15 +82,15 @@
         </div>
         <h4 class="banner__description__crew__h4">Featured Crew</h4>
         <div v-if="url === 'infoMovie'" class="banner__description__crew">
-          <div class="banner__description__crew__member">
+          <div v-if="crew.director" class="banner__description__crew__member">
             <p class="banner__description__crew__member__name">{{ crew.director.name }}</p>
             <p class="banner__description__crew__member__role">Director</p>
           </div>
-          <div class="banner__description__crew__member">
+          <div v-if="crew.producer" class="banner__description__crew__member">
             <p class="banner__description__crew__member__name">{{ crew.producer.name }}</p>
             <p class="banner__description__crew__member__role">Producer</p>
           </div>
-          <div class="banner__description__crew__member">
+          <div v-if="crew.writer" class="banner__description__crew__member">
             <p class="banner__description__crew__member__name">{{ crew.writer.name }}</p>
             <p class="banner__description__crew__member__role">Writer</p>
           </div>
@@ -102,6 +109,8 @@
 <script>
 export default {
   props: {
+    rating: Number,
+    favourited: Boolean,
     show: {
       type: Object,
       required: true
@@ -113,6 +122,15 @@ export default {
   data() {
     return {
       url: this.$route.name
+    }
+  },
+  methods: {
+    colorFill() {
+      let activeColor = '#eb4e7a'
+      let inactiveColor = '#fff'
+      if (this.favourited === true) {
+        return activeColor
+      } else return inactiveColor
     }
   }
 }

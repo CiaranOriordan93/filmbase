@@ -12,12 +12,8 @@
     "
   >
     <div class="hero__text">
-      <h3 class="hero__category">
-        Now Playing
-      </h3>
-      <h2 class="hero__name">
-        {{ details ? details.title : 0 }}
-      </h2>
+      <h3 class="hero__category">Now Playing</h3>
+      <h2 class="hero__name">{{ details ? details.title : 0 }}</h2>
       <h4 class="hero__details">
         {{ details ? details.genres[0].name : 0 }} |
         <svg
@@ -70,7 +66,7 @@ export default {
         })
       })
       .catch(error => {
-        console.log(`There was an error: ${error.response}`) // Logs out the error
+        console.log(`There was an error: ${error.response}`)
       })
   }
 }

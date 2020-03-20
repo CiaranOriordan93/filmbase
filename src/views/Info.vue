@@ -1,7 +1,7 @@
 <template>
   <div class="info">
     <NavBar />
-    <Banner :show="show" :crew="crew" />
+    <Banner :show="show" :crew="crew" :favourited="favourited" :rating="rating" />
   </div>
 </template>
 
@@ -23,7 +23,9 @@ export default {
         director: {},
         producer: {},
         writer: {}
-      }
+      },
+      rating: null,
+      favourited: Boolean
     }
   },
   created() {
@@ -31,6 +33,34 @@ export default {
       APIService.getTvShowDetails(this.$route.params.id).then(response => {
         this.show = response.data
       })
+      APIService.getUserFavTvShows(
+        this.$store.state.userId,
+        this.$store.state.sessionId
+      )
+        .then(response => {
+          if (response.data.results.find(o => o.id == this.$route.params.id)) {
+            this.favourited = true
+          } else {
+            this.favourited = false
+          }
+        })
+        .catch(error => console.log(error))
+
+      APIService.getUserRatedTvShows(
+        this.$store.state.userId,
+        this.$store.state.sessionId
+      )
+        .then(response => {
+          if (response.data.results.find(o => o.id == this.$route.params.id)) {
+            let show = response.data.results.find(
+              o => o.id == this.$route.params.id
+            )
+            this.rating = show.rating
+          } else {
+            this.rating = null
+          }
+        })
+        .catch(error => console.log(error))
     } else
       APIService.getMovieDetails(this.$route.params.id).then(response => {
         this.show = response.data
