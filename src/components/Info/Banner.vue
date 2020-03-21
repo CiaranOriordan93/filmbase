@@ -27,7 +27,11 @@
             </div>
             <span class="banner__description__options__score-value">User Score</span>
           </div>
-          <div class="banner__description__options__favourite" title="Click to add as favourite!">
+          <div
+            class="banner__description__options__favourite"
+            title="Click to add as favourite!"
+            @click="toggleActive"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 -28 512.00002 512"
@@ -121,7 +125,8 @@ export default {
   },
   data() {
     return {
-      url: this.$route.name
+      url: this.$route.name,
+      active: this.favourited
     }
   },
   methods: {
@@ -131,6 +136,9 @@ export default {
       if (this.favourited === true) {
         return activeColor
       } else return inactiveColor
+    },
+    toggleActive() {
+      this.active = false
     }
   }
 }
