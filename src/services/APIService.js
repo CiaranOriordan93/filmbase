@@ -48,7 +48,7 @@ export default {
   },
   getDiscoverMovies(release, genre, sort) {
     return apiClient.get(
-      `/discover/movie?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US&sort_by=${sort}&with_genres=${genre}&year=${release}&language=en-US`
+      `/discover/movie?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&sort_by=${sort}&with_genres=${genre}&year=${release}`
     )
   },
 

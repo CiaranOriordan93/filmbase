@@ -2,7 +2,7 @@
   <div class="banner">
     <div
       class="banner__container"
-      :style="{backgroundImage: `linear-gradient(to bottom, rgba(2, 154, 255, 0.85), rgba(2, 154, 255, 0.85)), url(https://image.tmdb.org/t/p/w1280${show.backdrop_path})`}"
+      :style="{backgroundImage: `linear-gradient(to bottom, rgba(2, 154, 255, 0.85), rgba(2, 154, 255, 0.85)), url(https://image.tmdb.org/t/p/w1280${show.backdrop_path || show.poster_path})`}"
     >
       <div class="banner__picture">
         <img

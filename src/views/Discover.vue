@@ -3,10 +3,7 @@
     <div class="discover__nav">
       <NavBar />
     </div>
-    <Search
-      @searchObject="search = $event"
-      @searchCall="searchRequest"
-    />
+    <Search @searchObject="search = $event" @searchCall="searchRequest" />
     <SearchResults :results="result" />
   </div>
 </template>
@@ -40,7 +37,7 @@ export default {
       this.search.sort
     )
       .then(response => {
-        for (let n = 0; n < response.data.results.length; n++) {
+        for (let n = 1; n < response.data.results.length; n++) {
           this.result.push(response.data.results[n])
         }
       })
