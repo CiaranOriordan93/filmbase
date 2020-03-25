@@ -1,10 +1,7 @@
 <template>
   <div class="result__card">
-    <div class="result__image">
-      <img
-        :src="`https://image.tmdb.org/t/p/w300${movie.poster_path}`"
-        class="result__image__img"
-      >
+    <div class="result__image" @click="storeShowId">
+      <img :src="`https://image.tmdb.org/t/p/w300${movie.poster_path}`" class="result__image__img" />
     </div>
     <div class="result__heading">
       <p>{{ stringReducer }}</p>
@@ -62,6 +59,11 @@ export default {
             : this.movie.name
         return trimmedString
       }
+    }
+  },
+  methods: {
+    storeShowId() {
+      this.$router.push('/info/movie-id=' + this.movie.id)
     }
   }
 }

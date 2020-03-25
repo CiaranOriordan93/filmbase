@@ -31,6 +31,14 @@
     background-color: #eb4e7a;
   }
 
+  &__input[type='number'] {
+    width: 13rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 3%;
+    background-color: #eb4e7a;
+  }
+
   &__options {
     border: none;
     border-radius: 3%;

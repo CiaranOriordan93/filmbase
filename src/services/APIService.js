@@ -46,9 +46,9 @@ export default {
       `/discover/movie?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US&sort_by=popularity.desc`
     )
   },
-  getDiscoverMovies(release, genre, sort) {
+  getDiscoverMovies(release, sort, genre) {
     return apiClient.get(
-      `/discover/movie?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&sort_by=${sort}&with_genres=${genre}&year=${release}`
+      `/discover/movie?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&primary_release_year=${release}&with_genres=${genre}&sort_by=${sort}`
     )
   },
 

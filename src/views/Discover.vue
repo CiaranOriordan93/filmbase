@@ -24,7 +24,7 @@ export default {
     return {
       result: [],
       search: {
-        release: 0,
+        release: '',
         genre: '',
         sort: ''
       }
@@ -33,13 +33,11 @@ export default {
   created() {
     APIService.getDiscoverMovies(
       this.search.release,
-      this.search.genre,
-      this.search.sort
+      this.search.sort,
+      this.search.genre
     )
       .then(response => {
-        for (let n = 1; n < response.data.results.length; n++) {
-          this.result.push(response.data.results[n])
-        }
+        this.result = response.data.results.filter(o => o !== null)
       })
       .catch(error => {
         console.log(`There was an error: ${error.response}`)
@@ -49,14 +47,11 @@ export default {
     searchRequest() {
       APIService.getDiscoverMovies(
         this.search.release,
-        this.search.genre,
-        this.search.sort
+        this.search.sort,
+        this.search.genre
       )
         .then(response => {
-          this.result = []
-          for (let i = 0; i < response.data.results.length; i++) {
-            this.result.push(response.data.results[i])
-          }
+          this.result = response.data.results.filter(o => o !== null)
         })
         .catch(error => {
           console.log(`There was an error: ${error.response}`)
