@@ -134,5 +134,15 @@ export default {
     return apiClient.get(
       `/account/${accountId}/rated/tv?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&language=en-US&session_id=${sessionId}`
     )
+  },
+  postFavourite(body) {
+    return apiClient.post(
+      `/account/${body.accountId}/favorite?api_key=6c1e80dae659cb7d1abdf16afd8bb0e3&session_id=${body.sessionId}`,
+      {
+        media_type: body.mediaType,
+        media_id: body.mediaId,
+        favourite: body.favourite
+      }
+    )
   }
 }

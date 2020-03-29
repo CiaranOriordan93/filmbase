@@ -25,7 +25,7 @@ export default {
         writer: {}
       },
       rating: null,
-      favourited: Boolean
+      favourited: false
     }
   },
   created() {

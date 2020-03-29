@@ -28,6 +28,7 @@
   }
 
   &__description {
+    position: relative;
     margin-top: 14.5rem;
     height: 39rem;
     width: 38%;
@@ -41,9 +42,22 @@
 
     &__options {
       display: flex;
+      position: relative;
       justify-content: space-between;
       align-items: center;
       width: 40%;
+
+      &__error-span {
+        position: absolute;
+        left: 32rem;
+        width: 10rem;
+        top: 6.5rem;
+        color: red;
+        background-color: whitesmoke;
+        border: 1px solid red;
+        border-radius: 5px;
+        text-align: center;
+      }
 
       &__favourite {
         display: flex;

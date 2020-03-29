@@ -30,14 +30,14 @@
           <div
             class="banner__description__options__favourite"
             title="Click to add as favourite!"
-            @click="toggleActive"
+            @click="makeFavourite"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 -28 512.00002 512"
               width="20px"
               height="30px"
-              :fill="colorFill()"
+              :fill="favouritedColorFill()"
             >
               <g>
                 <path
@@ -49,7 +49,11 @@
               </g>
             </svg>
           </div>
-          <div class="banner__description__options__rating" title="Click to rate!">
+          <div
+            class="banner__description__options__rating"
+            title="Click to rate!"
+            @click="makeRating"
+          >
             <svg
               id="Capa_1"
               title="click to rate!"
@@ -63,6 +67,7 @@
               xml:space="preserve"
               width="20px"
               height="30px"
+              :fill="ratedColorFill()"
             >
               <g>
                 <g>
@@ -72,7 +77,6 @@
                       data-original="#000000"
                       class="active-path"
                       data-old_color="#ffffff"
-                      fill="#eb4e7a"
                     />
                   </g>
                 </g>
@@ -80,6 +84,10 @@
             </svg>
           </div>
         </div>
+        <span
+          v-if="displayError === true"
+          class="banner__description__options__error-span"
+        >Please Login</span>
         <div class="banner__description__overview">
           <h4 class="banner__description__overview__h4">Overview</h4>
           <p class="banner__description__overview__para">{{ show.overview }}</p>
@@ -111,6 +119,7 @@
 </template>
 
 <script>
+import APIService from '../../services/APIService'
 export default {
   props: {
     rating: Number,
@@ -126,19 +135,42 @@ export default {
   data() {
     return {
       url: this.$route.name,
-      active: this.favourited
+      active: this.favourited,
+      activeColor: '#eb4e7a',
+      inactiveColor: '#fff',
+      type: this.findType(),
+      displayError: false
     }
   },
   methods: {
-    colorFill() {
-      let activeColor = '#eb4e7a'
-      let inactiveColor = '#fff'
-      if (this.favourited === true) {
-        return activeColor
-      } else return inactiveColor
+    favouritedColorFill() {
+      if (this.active === true) {
+        return this.activeColor
+      } else return this.inactiveColor
     },
-    toggleActive() {
-      this.active = false
+    ratedColorFill() {
+      if (this.rating !== null) {
+        return this.activeColor
+      } else return this.inactiveColor
+    },
+    makeFavourite() {
+      if (this.$store.state.sessionId !== null) {
+        this.displayError = false
+        this.active = !this.active
+        APIService.postFavourite({
+          accountId: this.store.state.userId,
+          sessionId: this.store.state.sessioId,
+          mediaType: this.type,
+          mediaId: this.$route.params.id,
+          favourite: this.active
+        })
+      } else this.displayError = true
+    },
+    makerating() {},
+    findType() {
+      if (this.url === 'infoMovie') {
+        return 'movie'
+      } else return 'tv'
     }
   }
 }
