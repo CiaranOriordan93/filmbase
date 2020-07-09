@@ -1,5 +1,7 @@
 # filmbase
 
+Purpose of this site was to practice building out applications with Vue.js along with tools such as Vue-router and state management with Vuex. Also wanted to work more with APIs and to also work with user login.
+
 ## Project setup
 ```
 npm install
